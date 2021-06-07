@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import { setHighScore} from '../services/api.js'
+import { setHighScore } from '../services/api.js'
+
 
 export default function Form(props) {
   const formObj = {
