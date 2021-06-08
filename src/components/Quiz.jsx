@@ -45,11 +45,12 @@ const Quiz = () => {
       setScore((prevScore) => prevScore + 1)
     } else {
       // if three strikes, then you're done, else add an X
-      if (wrongCount < 3) {
+      if (wrongCount < 2) {
         setMessage("Incorrect..")
         setWrongCount((prevCount) => prevCount + 1)        
       
       } else {
+        setWrongCount((prevCount) => prevCount + 1) 
         setMessage("Game Over") // this is where you'll display the high score form
       }
     }
@@ -58,10 +59,13 @@ const Quiz = () => {
   
   //==== Displays xs ===//
   const displayStrikes = () => {
-    console.log(wrongCount)
+    let stringX = ""
     for (let i = 0; i < wrongCount; i++) {
-      return <p>X</p>
+
+      stringX += 'X ';
+      
     }
+    return stringX
   }
 
   return (
