@@ -8,20 +8,20 @@ import { useState, useEffect } from 'react'
 export default function ChoiceButtonList(props) {
   const { tempArray, correctObj, getRandomIndex, handleChoice } = props;
   const [buttons, setButtons] = useState([]);
-
+  // const [clicked, setClicked] = useState(false)
   useEffect(() => {
     const createButtonArray = async (tempArray, correctObj) => {
       let btnArray = [];
-      btnArray.push(correctObj)
-      let index = 0
+      btnArray.push(correctObj);
+      let index = 0;
       for (let i = 1; i < 4; i++) {
         //take random item from temp arr and place in btnArray
-        index = getRandomIndex(tempArray)
-        btnArray.push(tempArray[index])
-        tempArray.splice(index, 1)
-      }
+        index = getRandomIndex(tempArray);
+        btnArray.push(tempArray[index]);
+        tempArray.splice(index, 1);
      
-      setButtons(btnArray)
+      }
+      setButtons(btnArray);
     }
     createButtonArray(tempArray, correctObj);
   }, [correctObj])

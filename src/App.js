@@ -6,6 +6,7 @@ import Form from './components/Form'
 import Header from './components/Header'
 import DisplayScores from './components/DisplayScores';
 
+
 function App() {
 
 //DOM rendering 
@@ -15,7 +16,7 @@ function App() {
       <Route path="/" exact>
         <Home />
       </Route>
-      <Route path= "/quiz"> 
+      <Route path="/quiz">
         <Quiz />
       </Route>
       <Route path="/scores">
