@@ -30,6 +30,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  position: absolute;
+  top: 0;
   width: 100%;
   background-color: #a0937d;
   font-family: "Squealer";
@@ -50,7 +52,7 @@
 }
 
 #play-button {
-  width: 40px;
+  width: 60px;
 }
 
 .button-container {
@@ -67,12 +69,15 @@
   justify-content: space-between;
 }
 
-button {
+.choice-btn {
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: space-around; */
   align-items: center;
+  height: 45px;
   width: 100px;
+  margin: 10px;
+  box-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 
 .scores-list {

@@ -76,7 +76,9 @@ const Quiz = () => {
       
       <h4 id="score">{`${score}pts`}</h4>
       <div>{displayStrikes()}</div>
-      <PlayButton correctObj={correctObj} />
+       
+          <PlayButton correctObj={correctObj} />
+       
       <br />
       
       <div className="button-container">

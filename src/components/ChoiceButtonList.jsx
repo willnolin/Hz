@@ -47,7 +47,7 @@ export default function ChoiceButtonList(props) {
     <div className="button-list">
       
       {shuffle(buttons).map((btn, index) => {
-        return <button id={`btn${index}`} key={index}
+        return <button className={`choice-btn`} key={index}
           name={`${btn.name}`} onClick={handleChoice}
           >{btn.name}</button>
       })}
