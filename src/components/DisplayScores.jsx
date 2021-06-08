@@ -18,14 +18,14 @@ export default function DisplayScores() {
 
   return (
     <>
-    <div> 
+    <div className="score-display"> 
       {scores.map((entry, index) => {
         return <div key={index}>
           <h1>{entry.fields.user}</h1> 
         <h2>{entry.fields.score}</h2> 
         <h2>{entry.fields.date}</h2> </div>
       })}
-      </div>
+    </div>
     </>
   )
 }

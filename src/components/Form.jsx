@@ -1,15 +1,20 @@
-import {useState} from 'react'
+import { useState, useRef } from 'react'
+import { useHistory } from 'react-router-dom'
+
 import { setHighScore } from '../services/api.js'
 
 
 export default function Form(props) {
+  // const scoreRef = useRef(null)
   const formObj = {
     user : "",
     score : "",
 
   }
- 
   const [input, setInput]= useState(formObj);
+  
+  const history = useHistory("")
+
   // const [show, setShow] = useState("none")
   const handleChange = async (e) => {
     const {name, value} = e.target;
@@ -17,6 +22,7 @@ export default function Form(props) {
     setInput((prevInput) => ({
       ...prevInput,
       [name]: value,
+      score: `${props.score}`,
     }))
   }
   
@@ -24,6 +30,7 @@ export default function Form(props) {
     e.preventDefault()
     await setHighScore(input);
     setInput({})
+    history.push("/")
   }
   
   return (
@@ -36,7 +43,7 @@ export default function Form(props) {
             <input type="text" name = "user" id="user" />
             <br/>
             <label></label>
-            <input type="hidden" name = "score" id="score" value={props.score} />
+            <input type="hidden" name="score" id="score" />
             <br />
             <button>submit</button>
           </form>
