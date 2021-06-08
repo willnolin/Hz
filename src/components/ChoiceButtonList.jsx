@@ -44,7 +44,7 @@ export default function ChoiceButtonList(props) {
   }
  // ==================================// 
   return (
-    <div>
+    <div className="button-list">
       
       {shuffle(buttons).map((btn, index) => {
         return <button id={`btn${index}`} key={index}

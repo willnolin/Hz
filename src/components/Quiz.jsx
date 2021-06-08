@@ -72,7 +72,7 @@ const Quiz = () => {
   }
 
   return (
-    <div>
+    <div className="gameplay-container">
       
       <h4 id="score">{`${score}pts`}</h4>
       <div>{displayStrikes()}</div>

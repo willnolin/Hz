@@ -33,7 +33,8 @@ export default function PlayButton(props) {
 
   return (
     <div>
-      <img src={play_button} alt="play" id="play-button" onClick={handleClick}/>
+      {/* <img src={play_button} alt="play" id="play-button" onClick={handleClick}/> */}
+      
     </div>
   )
 }

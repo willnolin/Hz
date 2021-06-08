@@ -1,31 +1,94 @@
+/* #FAF1E6  light sand
+   #fdfaf6  egg white
+  #e4efe7   light green
+  #064420  dark green
+  #334443   deep dark
+  #a0937d   sandy brown
+  #e3cdc1   salmon
+
+  */
+
+/* This animates the circle when it switches to play */
+/* #circle {
+  transition: stroke-dashoffset 300ms ease-in;
+  stroke-dashoffset: 0;
+  fill: none;
+}
+#circle.play {
+  stroke-dashoffset: 314;
+} */
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  background-color: #334443;
+  height: 100vh;
 }
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+  background-color: #a0937d;
+  font-family: "Squealer";
 }
+
+.scores-link {
+  color: rgb(10, 9, 11) !important;
+  text-decoration: none;
+}
+
+.scores-link:visited {
+  color: rgb(9, 8, 9);
+  text-decoration: none;
+}
+.gameplay-container {
+  display: flex;
+  flex-direction: column;
+}
+
 #play-button {
   width: 40px;
 }
 
 .button-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  height: 250px;
+  width: 250px;
+}
+
+.button-list {
+  /* display: flex; */
+  justify-content: space-between;
 }
 
 button {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
   align-items: center;
   width: 100px;
+}
+
+.scores-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 40%;
+}
+
+.score-entry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 30px;
+  /* width: 100px; */
 }
 
 .modal {

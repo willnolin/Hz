@@ -10,20 +10,24 @@ export default function DisplayScores() {
       const res = await getAllHighScores();
       
       const data = res.records;
-      
+      console.log(data)
       setScores(data);
     } 
    fetchData()
   }, []);
 
+  const sortScores = (array)=> {
+    
+  }
+
   return (
     <>
-    <div className="score-display"> 
+    <div className="scores-list"> 
       {scores.map((entry, index) => {
-        return <div key={index}>
-          <h1>{entry.fields.user}</h1> 
-        <h2>{entry.fields.score}</h2> 
-        <h2>{entry.fields.date}</h2> </div>
+        return <div className = "score-entry" key={index}>
+          <h4>{entry.fields.user}</h4>
+          <h5>{`${entry.fields.score} pts`}</h5>
+        <h5>{entry.createdTime.slice(0,10)}</h5> </div>
       })}
     </div>
     </>

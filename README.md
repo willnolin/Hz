@@ -97,22 +97,22 @@ https://api.airtable.com/v0/app67oeILCiV8Nzfc/Table%201
 
 | Component                                                      | Priority | Estimated Time | Time Invested | Actual Time |
 | -------------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Render AirTable Data                                           |    H     |      2hrs      |               |             |
-| Create Form Componenet                                         |    H     |      2hrs      |               |             |
-| GET / POST data                                                |    H     |      2hrs      |               |             |
-| Display high score data                                        |    H     |      2hrs      |               |             |
-| Create sound folder                                            |    H     |      2hrs      |               |             |
-| Create array with ref to sounds and names                      |    H     |      3hrs      |               |             |
-| Import and get random sound                                    |    H     |      2hrs      |               |             |
-| Create PlayButton Component                                    |    H     |      1hr       |               |             |
-| OnClick play random sound (changes with refresh)               |    H     |      3hr       |               |             |
-| Create button with Playbutton sound name (correct choice)      |    H     |      2hrs      |               |             |
-| Create other button Components with random values (from array) |    H     |      3hrs      |               |             |
-| Implement Gameplay (comparisons)                               |    H     |      3hrs      |               |             |
-| Keep track of score and wrong guesses                          |    H     |      1hrs      |               |             |
-| Render messages, score count and strikes                       |    H     |      3hrs      |               |             |
-| Create Modal (form) for game over                              |    H     |      3hrs      |               |             |
-| Display Modal to the screen                                    |    H     |      3hrs      |               |             |
+| Render AirTable Data                                           |    H     |      2hrs      |     2hrs      |             |
+| Create Form Componenet                                         |    H     |      2hrs      |     3hrs      |             |
+| GET / POST data                                                |    H     |      2hrs      |    1.5 hrs    |             |
+| Display high score data                                        |    H     |      2hrs      |     1 hr      |             |
+| Create sound folder                                            |    H     |      2hrs      |     2hrs      |             |
+| Create array with ref to sounds and names                      |    H     |      3hrs      |     2hrs      |             |
+| Import and get random sound                                    |    H     |      2hrs      |     2hrs      |             |
+| Create PlayButton Component                                    |    H     |      1hr       |     2hrs      |             |
+| OnClick play random sound (changes with refresh)               |    H     |      3hr       |     2hrs      |             |
+| Create button with Playbutton sound name (correct choice)      |    H     |      2hrs      |     2hrs      |             |
+| Create other button Components with random values (from array) |    H     |      3hrs      |     4hrs      |             |
+| Implement Gameplay (comparisons)                               |    H     |      3hrs      |     2hrs      |             |
+| Keep track of score and wrong guesses                          |    H     |      1hrs      |      1hr      |             |
+| Render messages, score count and strikes                       |    H     |      3hrs      |     3hrs      |             |
+| Create Modal (form) for game over                              |    H     |      3hrs      |     2hrs      |             |
+| Display Modal to the screen                                    |    H     |      3hrs      |     2hrs      |             |
 | Implement Routing with all Components                          |    H     |      3hrs      |               |             |
 | Inital styling                                                 |    H     |      3hrs      |               |             |
 | Advanced styling (transitions)                                 |    M     |      3hrs      |               |             |
