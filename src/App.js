@@ -22,9 +22,9 @@ function App() {
       <Route path="/scores">
         <DisplayScores />
       </Route>
-      <Route path="/form">  
+      {/* <Route path="/form">  
         <Form />
-      </Route>
+      </Route> */}
     </div>
   );
 }

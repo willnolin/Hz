@@ -1,7 +1,8 @@
+import React from 'react';
 import { useState, useEffect } from 'react'
 import PlayButton from "./PlayButton"
 import ChoiceButtonList from "./ChoiceButtonList"
-import React from 'react';
+import Form from "./Form"
 
 import { useHistory } from 'react-router-dom'
 
@@ -18,6 +19,7 @@ const Quiz = () => {
   const [clicked, setClicked] = useState(false)
   //variables  (is this necessary?)
   const [wrongCount,  setWrongCount] = useState(0)
+  const [show, setShow] = useState("none")
   
   //get random index from given array
   const getRandomIndex = (arr) => {
@@ -52,6 +54,7 @@ const Quiz = () => {
       } else {
         setWrongCount((prevCount) => prevCount + 1) 
         setMessage("Game Over") // this is where you'll display the high score form
+        setShow("block")
       }
     }
     
@@ -81,7 +84,9 @@ const Quiz = () => {
         getRandomIndex={getRandomIndex} handleChoice={handleChoice}/>
         <p>{message}</p>
       </div>
-   
+    
+        <Form score={score} show={show} />
+  
     </div>
   );
 }

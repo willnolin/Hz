@@ -15,7 +15,13 @@ export default function PlayButton(props) {
         // sound.fade(this.volume, 0.0, 500)
         console.log("finished")
       },
+      onpause: function () {
+        
+        
+      },
+
       onstop: function () {
+        
         // sound.fade(this.volume, 0.0, 500)
       }
     });

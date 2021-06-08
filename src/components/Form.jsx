@@ -6,12 +6,11 @@ export default function Form(props) {
   const formObj = {
     user : "",
     score : "",
-    date : "",
 
   }
  
   const [input, setInput]= useState(formObj);
-
+  // const [show, setShow] = useState("none")
   const handleChange = async (e) => {
     const {name, value} = e.target;
     
@@ -29,20 +28,20 @@ export default function Form(props) {
   
   return (
     <> 
-    <div className="App">
-    <form onSubmit={handleSubmit} onChange={handleChange}>
-      <label>Enter user:</label>
-      <input type="text" name = "user" id="user" />
-      <br/>
-      <label>Enter score:</label>
-      <input type="text" name = "score" id="score" />
-      <br/>
-      <label>Date:</label>
-      <input type="date" name = "date" id="date" />
-      <br/>
-      <button>submit</button>
-    </form>
-    </div>
+      <div className="modal" style={{ display: props.show }}>
+        <div className="form">
+          <form onSubmit={handleSubmit} onChange={handleChange}>
+            <p>New High Score!</p>
+            <label>Enter your name:</label>
+            <input type="text" name = "user" id="user" />
+            <br/>
+            <label></label>
+            <input type="hidden" name = "score" id="score" value={props.score} />
+            <br />
+            <button>submit</button>
+          </form>
+        </div>
+      </div>
     </>
   )
 
