@@ -7,11 +7,11 @@ export default function DisplayScores() {
 
   useEffect(()=> {
     const fetchData = async () => {
-    const res = await getAllHighScores();
-    
-    const data = res.records;
-    
-    setScores(data);
+      const res = await getAllHighScores();
+      
+      const data = res.records;
+      
+      setScores(data);
     } 
    fetchData()
   }, []);

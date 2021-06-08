@@ -5,7 +5,12 @@
   align-items: center;
   text-align: center;
 }
-
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
 #play-button {
   width: 40px;
 }
@@ -22,7 +27,7 @@ button {
   align-items: center;
   width: 100px;
 }
-
+/* 
 #btn0 {
   display: flex;
   order: 0;
@@ -41,4 +46,4 @@ button {
 #btn3 {
   display: flex;
   order: 3;
-}
+} */
