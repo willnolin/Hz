@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   return (
     <div className="header-container">
+      <img src="../images/screw.png" alt="screw"></img>
       {/* <div className = "inner-header"> */}
       <div className = "nav-bar" >
         <Link className="scores-link" to="/scores">

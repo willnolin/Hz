@@ -35,6 +35,7 @@ const Quiz = (props) => {
       let correct = tempArray.splice(index, 1)
       setCorrectObj(correct[0])
       setTempArray(tempArray)
+      console.log("inside pgetPlayButton")
     }
     getPlayButtonValue(tempArray)
   }, [clicked])
@@ -61,18 +62,17 @@ const Quiz = (props) => {
     }
     
   }
+  // =============================================//
   
   //==== Displays xs ===//
   const displayStrikes = () => {
     let stringX = ""
     for (let i = 0; i < wrongCount; i++) {
-
-      stringX += 'X ';
-      
+      stringX += 'X '; 
     }
     return stringX
   }
-
+ // ========================
   return (
     <div className="gameplay-container">
       
