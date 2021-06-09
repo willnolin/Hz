@@ -2,13 +2,19 @@ import { useState } from 'react'
 
 import { Howl, Howler } from 'howler'
 import useSound from 'use-sound'
+
 export default function PlayButton(props) {
   const { correctObj } = props;
   const [playing, setPlaying] = useState(false);
   // ===  Play Button will generate the sine wave.
    ///    This is the only component that does this.
-const [play, {stop}] = useSound()
-  ////////////////////////
+  const [play, { stop}] = useSound(correctObj.file, {
+    onend: () => {
+      console.log('ended');
+      setPlaying(false)
+    },
+  })
+  ////////////////////////  HOWLER ////////////////////
   // const sound = new Howl({
   //     src: [correctObj.file],     //put sounds in order by freqency in index.js so you can adjust volume by index
   //     volume: correctObj.volume,
@@ -19,22 +25,22 @@ const [play, {stop}] = useSound()
   // });
   // console.log(sound)
   //   ////////////////////////////
-  //   const handlePlay = () => {
-  //     setPlaying(true)
-  //     sound.play()
-  //   }
+    const handlePlay = () => {
+      setPlaying(true)
+      play()
+    }
   
-  // const handlePause = () => {
-  //   setPlaying(false)
-  //   sound.pause()
-  //   }
+  const handleStop = () => {
+    setPlaying(false)
+    stop()
+    }
 
   
   return (
     <div className="play-button">
-      {/* <img src={play_button} alt="play" id="play-button" onClick={handleClick}/> */}
+     
       {playing ? (
-        <i className="far fa-pause-circle" onClick={handlePause}></i>
+        <i className="far fa-pause-circle" onClick={handleStop}></i>
         ) : (
         <i className="far fa-play-circle" onClick={handlePlay}></i>
       )}

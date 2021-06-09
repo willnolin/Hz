@@ -43,6 +43,7 @@ const Quiz = (props) => {
   const handleChoice = (e) => {
     setClicked((prevClick) =>!prevClick)
     setTempArray([...mp3Array])
+    console.log(e)
     if (correctObj.name === e.target.name) {
       setMessage("Correct!")
       setScoreCount((prevScore) => prevScore + 1)
