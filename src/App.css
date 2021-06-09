@@ -32,13 +32,33 @@
   justify-content: space-around;
   position: absolute;
   top: 0;
+  height: 100px;
   width: 100%;
   background-color: #a0937d;
+  /* background: conic-gradient(
+    from 45deg,
+    #000104 0,
+    #000004 90deg,
+    #000337 90deg,
+    #000337 180deg,
+    #0f0f10 180deg,
+    #151518 270deg,
+    #2e3032 270deg,
+    #4d5255 360deg
+  );
+  background-size: 0.5em 0.5em; */
+  /* height: 100vh; */
+
   font-family: "Squealer";
+}
+
+.app-title {
+  font-size: 60px;
 }
 
 .scores-link {
   color: rgb(10, 9, 11) !important;
+  background-color: rgba(156, 154, 154, 0.4);
   text-decoration: none;
 }
 
@@ -84,7 +104,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 40%;
+  width: 300px;
 }
 
 .score-entry {
@@ -95,7 +115,9 @@
   height: 30px;
   /* width: 100px; */
 }
-
+.scores-field {
+  width: 200px;
+}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
