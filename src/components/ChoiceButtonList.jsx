@@ -19,7 +19,6 @@ export default function ChoiceButtonList(props) {
         index = getRandomIndex(tempArray);
         btnArray.push(tempArray[index]);
         tempArray.splice(index, 1);
-     
       }
       setButtons(btnArray);
     }

@@ -2,9 +2,9 @@ import {useState, useEffect} from 'react'
 
 import { getAllHighScores } from '../services/api.js'
 
-export default function DisplayScores() {
-  const [scores, setScores] = useState([])
- // get high scores from API
+export default function DisplayScores(props) {
+const {scores, setScores} = props
+ // get high scores  from API
   useEffect(()=> {
     const fetchData = async () => {
       const res = await getAllHighScores();  

@@ -10,17 +10,18 @@ import {
   mp3Array
 } from '../sounds/index.js'
 
-const Quiz = () => {
+const Quiz = (props) => {
   const [tempArray, setTempArray] = useState([...mp3Array]);
   const [correctObj, setCorrectObj] = useState({});
   const [message, setMessage] = useState("");
-  const [score, setScore] = useState(0);
+  const [scoreCount, setScoreCount] = useState(0);
   const history = useHistory();
   const [clicked, setClicked] = useState(false)
   //variables  (is this necessary?)
   const [wrongCount,  setWrongCount] = useState(0)
   const [show, setShow] = useState("none")
-  
+
+
   //get random index from given array
   const getRandomIndex = (arr) => {
     return Math.floor(Math.random() * arr.length)
@@ -44,7 +45,7 @@ const Quiz = () => {
     setTempArray([...mp3Array])
     if (correctObj.name === e.target.name) {
       setMessage("Correct!")
-      setScore((prevScore) => prevScore + 1)
+      setScoreCount((prevScore) => prevScore + 1)
     } else {
       // if three strikes, then you're done, else add an X
       if (wrongCount < 2) {
@@ -74,7 +75,7 @@ const Quiz = () => {
   return (
     <div className="gameplay-container">
       
-      <h4 id="score">{`${score}pts`}</h4>
+      <h4 id="score">{`${scoreCount} pts`}</h4>
       <div>{displayStrikes()}</div>
        
           <PlayButton correctObj={correctObj} />
@@ -84,10 +85,11 @@ const Quiz = () => {
       <div className="button-container">
         <ChoiceButtonList tempArray={tempArray} correctObj={correctObj}
         getRandomIndex={getRandomIndex} handleChoice={handleChoice}/>
-        <p>{message}</p>
+        <p className="result-message">{message}</p>
+        {/* <i className="fas fa-volume-up"></i> */}
       </div>
     
-        <Form score={score} show={show} />
+      <Form score={scoreCount} scores={props.scores} setScores={props.setScores} show={show} />
   
     </div>
   );

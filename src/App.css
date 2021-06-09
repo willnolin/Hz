@@ -23,17 +23,44 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  background-color: #334443;
+
+  /* background-color: #334443; */
+
   height: 100vh;
 }
-.header {
+.metal {
+  background-image: url(./images/metal.jpeg);
+  visibility: visible;
+}
+
+.carbon {
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
+  background-color: #131313;
+  background-size: 20px 20px;
+  background-clip: content-box;
+}
+.header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   position: absolute;
   top: 0;
-  height: 100px;
-  width: 100%;
+  height: 70px;
+  width: 100vw;
   background-color: #a0937d;
   /* background: conic-gradient(
     from 45deg,
@@ -47,13 +74,30 @@
     #4d5255 360deg
   );
   background-size: 0.5em 0.5em; */
-  /* height: 100vh; */
 
   font-family: "Squealer";
 }
-
+.inner-header {
+  display: flex;
+  background-color: rgba(156, 154, 154, 1);
+  height: 30px;
+  width: 90vw;
+}
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .app-title {
-  font-size: 60px;
+  font-size: 40px;
+  height: fit-content;
+  margin: 5px;
+}
+
+.main-container {
+  display: flex;
+
+  border: 10px solid burlywood;
 }
 
 .scores-link {
@@ -69,10 +113,19 @@
 .gameplay-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background: rgb(9, 8, 9);
+  height: 385px;
+  width: 256px;
+  border-radius: 10px;
+  border-style: groove;
+  box-shadow: 1px 1px 2px rgb(9, 8, 9);
 }
 
-#play-button {
-  width: 60px;
+#score,
+.result-message {
+  color: rgb(29, 244, 75);
+  text-shadow: 1px 1px 2px rgb(101, 186, 120);
 }
 
 .button-container {
@@ -89,6 +142,33 @@
   justify-content: space-between;
 }
 
+#play-button {
+  width: 60px;
+}
+
+.fas {
+  color: seashell;
+}
+
+.fa-play-circle {
+  display: block;
+  font-size: 50px;
+  color: rgb(101, 220, 127);
+  text-shadow: 1px 1px 2px rgb(101, 186, 120);
+}
+.fa-pause-circle {
+  display: block;
+  font-size: 50px;
+  color: rgb(101, 220, 127);
+  text-shadow: 1px 1px 2px rgb(101, 186, 120);
+}
+.far {
+  width: 50px;
+}
+.far:hover {
+  color: rgb(29, 244, 75);
+}
+
 .choice-btn {
   /* display: flex; */
   /* flex-direction: column; */
@@ -98,6 +178,13 @@
   width: 100px;
   margin: 10px;
   box-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+.result-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 325px;
 }
 
 .scores-list {
