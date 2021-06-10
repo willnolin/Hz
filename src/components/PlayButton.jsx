@@ -15,16 +15,18 @@ export default function PlayButton(props) {
    useEffect(() => {
     const getPlayButtonValue = () => {
       // setTempArray([...mp3Array])
-      let index = getRandomIndex(mp3Array);
+      let index = getRandomIndex(mp3Array); 
       setCorrectIndex(index);
       let correct = tempArray.splice(index, 1);
       setCorrectObj(correct[0]);
       setTempArray(tempArray); // <-----------setting state of tempArray to tempArray excluding that one temp value
-      console.log("inside pgetPlayButton");
+      
     }
      getPlayButtonValue();
   }, [clicked])
+  console.log(tempArray)
   console.log(tempArray[correctIndex])
+  console.log(mp3Array)
   console.log(mp3Array[correctIndex])
   // set useSound
   const [play, { stop }] = useSound(mp3Array[correctIndex].file, {
