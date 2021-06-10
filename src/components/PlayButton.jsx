@@ -1,11 +1,14 @@
 import { useState } from 'react'
-
+import {
+  mp3Array
+} from '../sounds/index.js'
 // import { Howl, Howler } from 'howler'
 import useSound from 'use-sound'
 
 export default function PlayButton(props) {
   const { correctObj } = props;
   const [playing, setPlaying] = useState(false);
+  console.log(correctObj)
   // ===  Play Button will generate the sine wave.
    ///    This is the only component that does this.
   console.log(correctObj.file)
@@ -14,7 +17,7 @@ export default function PlayButton(props) {
       console.log('ended');
       setPlaying(false)
     },
-    
+  
   })
   ////////////////////////  HOWLER ////////////////////
   // const sound = new Howl({

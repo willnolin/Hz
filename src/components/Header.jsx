@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-
+import screw from '../images/screw.png';
 
 export default function Header() {
   return (
     <div className="header-container">
-      <img src="../images/screw.png" alt="screw"></img>
+      <img src={screw} alt="screw" className="screw"></img>
       {/* <div className = "inner-header"> */}
       <div className = "nav-bar" >
         <Link className="scores-link" to="/scores">
@@ -18,6 +18,7 @@ export default function Header() {
       <div className = "app-title">  
         <h1>Hz</h1>
       </div>
+      <img src={screw} alt="screw" className="screw left"></img>
     </div>
   )
 }

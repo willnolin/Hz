@@ -75,14 +75,12 @@ const Quiz = (props) => {
  // ========================
   return (
     <div className="gameplay-container">
-      
-      <h4 id="score">{`${scoreCount} pts`}</h4>
-      <div>{displayStrikes()}</div>
-       
-          <PlayButton correctObj={correctObj} />
-       
-      <br />
-      
+      <div className="display-screen-container">
+      <div><h4 id="score">{`${scoreCount} pts`}</h4>
+        {displayStrikes()}</div>
+        <br />
+        </div>
+          <div> <PlayButton correctObj={correctObj} /> </div> 
       <div className="button-container">
         <ChoiceButtonList tempArray={tempArray} correctObj={correctObj}
         getRandomIndex={getRandomIndex} handleChoice={handleChoice}/>
