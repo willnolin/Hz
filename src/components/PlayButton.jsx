@@ -1,35 +1,37 @@
 import { useState, useEffect } from 'react'
-// import {
-//   mp3Array
-// } from '../sounds/index.js'
+import { mp3Array } from '../sounds/index.js'
 // import { Howl, Howler } from 'howler'
 import useSound from 'use-sound'
 
 // ===  Play Button will generate the sine wave.
  ///    This is the only component that does this.
 export default function PlayButton(props) {
-  const { correctObj, setCorrectObj, tempArray, setTempArray, getRandomIndex, clicked, mp3Array } = props;
+  const {
+    setCorrectObj,
+    setTempArray,
+    clicked,
+  } = props;
+  
   const [playing, setPlaying] = useState(false);
-  const [correctIndex, setCorrectIndex] = useState(0)
+  const [randArr, setRandArr] = useState([...mp3Array].sort(() => Math.random() - 0.5))
+  const [currentFile, setCurrentFile] = useState(randArr[0])
+
   // initialize play button
    useEffect(() => {
-    const getPlayButtonValue = () => {
-      // setTempArray([...mp3Array])
-      let index = getRandomIndex(mp3Array); 
-      setCorrectIndex(index);
-      let correct = tempArray.splice(index, 1);
-      setCorrectObj(correct[0]);
-      setTempArray(tempArray); // <-----------setting state of tempArray to tempArray excluding that one temp value
-      
-    }
-     getPlayButtonValue();
+    
+    setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
+    setTempArray(randArr)
+    if (randArr[0] !== currentFile) {
+      setCurrentFile(randArr[0]);
+      setCorrectObj(randArr[0]);
+    } else {
+      setCurrentFile(randArr[1]);
+      setCorrectObj(randArr[1]);
+    }  
   }, [clicked])
-  console.log(tempArray)
-  console.log(tempArray[correctIndex])
-  console.log(mp3Array)
-  console.log(mp3Array[correctIndex])
+ 
   // set useSound
-  const [play, { stop }] = useSound(mp3Array[correctIndex].file, {
+  const [play, { stop }] = useSound(currentFile.file, {
     onend: () => {
       console.log('ended');
       setPlaying(false)
