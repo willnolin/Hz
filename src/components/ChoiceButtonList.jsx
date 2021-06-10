@@ -6,8 +6,10 @@ import { useState, useEffect } from 'react'
 // ==  this component so that you can put it in the button array
 // ===  but then, the array will need to be scrambled somehow....
 export default function ChoiceButtonList(props) {
-  const { tempArray, correctObj, getRandomIndex, handleChoice } = props;
+  const { tempArray, correctObj, getRandomIndex, setClicked, setTempArray,
+    setMessage, wrongCount, setScoreCount, setWrongCount, setShow, mp3Array } = props;
   const [buttons, setButtons] = useState([]);
+ 
   // const [clicked, setClicked] = useState(false)
   useEffect(() => {
     const createButtonArray = async (tempArray, correctObj) => {
@@ -24,6 +26,30 @@ export default function ChoiceButtonList(props) {
     }
     createButtonArray(tempArray, correctObj);
   }, [correctObj])
+  
+  
+    //=========handle the button choise ========//
+    const handleChoice = (e) => {
+      setClicked((prevClick) =>!prevClick)
+      setTempArray([...mp3Array])
+      
+      if (correctObj.name === e.target.name) {
+        setMessage("Correct!")
+        setScoreCount((prevScore) => prevScore + 1)
+      } else {
+        // if three strikes, then you're done, else add an X
+        if (wrongCount < 2) {
+          setMessage("Incorrect..")
+          setWrongCount((prevCount) => prevCount + 1)        
+        
+        } else {
+          setWrongCount((prevCount) => prevCount + 1) 
+          setMessage("Game Over") // this is where you'll display the high score form
+          setShow("block")
+        }
+      }
+      
+    }
   
   // ======= Shuffle array =======//
   //https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
@@ -50,6 +76,7 @@ export default function ChoiceButtonList(props) {
           name={`${btn.name}`} onClick={handleChoice}
           >{btn.name}</button>
       })}
+
     </div>
   )
 }
