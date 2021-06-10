@@ -7,7 +7,10 @@ import { useState, useEffect } from 'react'
 // ===  but then, the array will need to be scrambled somehow....
 export default function ChoiceButtonList(props) {
   const {
-    tempArray, 
+    // tempArray,
+    randArr,
+    setRandArr,
+    mp3Array,
     correctObj,
     setClicked,
     setMessage,
@@ -20,20 +23,28 @@ export default function ChoiceButtonList(props) {
  
   // const [clicked, setClicked] = useState(false)
   useEffect(() => {
-    
-    tempArray && setButtons([
-      correctObj,
-      tempArray[2],
-      tempArray[3],
-      tempArray[4],
+    console.log(randArr)
+    console.log(correctObj)
+    randArr && setButtons([
+      correctObj && correctObj,
+      randArr[2],
+      randArr[3],
+      randArr[4],
     ].sort(() => Math.random() -0.5 ))
+    // tempArray && setButtons([
+    //   correctObj,
+    //   tempArray[2],
+    //   tempArray[3],
+    //   tempArray[4],
+    // ].sort(() => Math.random() -0.5 ))
 
-  }, [correctObj])
+  }, [correctObj, randArr])
   
   
     //=========handle the button choise ========//
     const handleChoice = (e) => {
-      setClicked((prevClick) =>!prevClick)
+      setClicked((prevClick) => !prevClick)
+      setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
       if (correctObj.name === e.target.name) {
         setMessage("Correct!")
         setScoreCount((prevScore) => prevScore + 1)
@@ -53,11 +64,15 @@ export default function ChoiceButtonList(props) {
   
     return (
       <div className="button-list">
-        
-        {buttons && buttons.map((btn, index) => {
-          return <button className={`choice-btn`} key={index}
-            name={`${btn.name}`} onClick={handleChoice}
-            >{btn.name}</button>
+        {console.log(buttons)}
+        {buttons.map((btn, index) => {
+          console.log(correctObj)
+          return <button
+            className={`choice-btn`}
+            key={index}
+            name={`${!btn ? correctObj.name : btn.name}`}
+            onClick={handleChoice}
+            >{!btn ? correctObj.name : btn.name}</button>
         })}
   
       </div>

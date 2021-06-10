@@ -12,7 +12,8 @@ import {
 
 const Quiz = (props) => {
   //copy of mp3 Array 
-  const [tempArray, setTempArray] = useState(null);
+  // const [tempArray, setTempArray] = useState(null);
+  const [randArr, setRandArr] = useState([...mp3Array].sort(() => Math.random() - 0.5))
   // state of current correct choice
   const [correctObj, setCorrectObj] = useState(null);
   // correct! or incorrect...
@@ -50,13 +51,18 @@ const Quiz = (props) => {
       <div>
         <PlayButton
           setCorrectObj={setCorrectObj}
-          setTempArray={setTempArray}
+          // setTempArray={setTempArray}
+          // setRandArr = {setRandArr}
+          randArr={randArr}
           clicked={clicked} />
       </div>
       
       <div className="button-container">
         <ChoiceButtonList
-          tempArray={tempArray}
+          // tempArray={tempArray}
+          randArr={randArr}
+          setRandArr = {setRandArr}
+          mp3Array = {mp3Array}
           correctObj={correctObj}
           wrongCount={wrongCount}
           setClicked={setClicked}

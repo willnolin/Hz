@@ -15,33 +15,37 @@ export default function Form(props) {
   const [input, setInput]= useState(formObj);
   const [highScoreMessage, setHighScoreMessage] = useState("Congrats")
   const history = useHistory("")
-
+  console.log(highScoreMessage)
   // get high scores  from API
-   useEffect(()=> {
-     const fetchData = async () => {
-       const res = await getAllHighScores();  
-       const data = res.records;
-       // sort Scores in descending order and set state
-       setScores(sortScores(data));
-       
-      } 
-      fetchData()
-    }, []);
-    
-    const sortScores = (array)=> {
-      return (array.sort((a,b) =>  b.fields.score-a.fields.score ))
-    }
+  useEffect(()=> {
+    const fetchData = async () => {
+      const res = await getAllHighScores();  
+      const data = res.records;
+      // sort Scores in descending order and set state
+      setScores(sortScores(data));
+  
+    } 
+    fetchData()
+  }, []);
+  
+  const sortScores = (array)=> {
+    return array.sort((a, b) => b.fields.score - a.fields.score)
+  }
+  
   
   // useEffect(() => {
-    
-  //   if (scores && score > scores[0].fields.score) {
-  //     setHighScoreMessage("New High Score!")
-     
-  //   } else {
-  //     setHighScoreMessage("Congrats")
-     
-  //   }
-  // }, [])
+    // console.log(scores) 
+    // if (score > scores[0].fields.score) {
+    //    setHighScoreMessage("New High Score!")
+      
+    //  } else {
+    //    setHighScoreMessage("Congrats")
+      
+    //  }
+  //  }, [scores])
+      
+
+
 
   // const [show, setShow] = useState("none")
   const handleChange = async (e) => {
@@ -66,8 +70,9 @@ export default function Form(props) {
     <> 
       <div className="modal" style={{ display: show }}>
         <div className="form">
-            <div><p>{highScoreMessage}</p></div>
+          {/* {console.log(score > parseInt(scores[0].fields.score))} */}
           <form onSubmit={handleSubmit} onChange={handleChange}>
+          <p>{score > parseInt(scores[0]?.fields.score) ? "High score!" : "congrats!"}</p>
             <label>Enter your name:</label>
             <input type="text" name = "user" id="user" />
             <br/>

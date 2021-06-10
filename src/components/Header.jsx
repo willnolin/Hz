@@ -6,7 +6,7 @@ export default function Header() {
     <div className="header-container">
       <img src={screw} alt="screw" className="screw"></img>
       {/* <div className = "inner-header"> */}
-      <div className = "nav-bar" >
+      <div className = "nav-bar metal" >
         <Link className="scores-link" to="/scores">
           <h3>high scores</h3>
         </Link> 

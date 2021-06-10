@@ -8,20 +8,22 @@ import useSound from 'use-sound'
 export default function PlayButton(props) {
   const {
     setCorrectObj,
-    setTempArray,
+    randArr,
+    // setTempArray,
     clicked,
   } = props;
-  
+
   const [playing, setPlaying] = useState(false);
-  const [randArr, setRandArr] = useState([...mp3Array].sort(() => Math.random() - 0.5))
+  // const [randArr, setRandArr] = useState([...mp3Array].sort(() => Math.random() - 0.5))
   const [currentFile, setCurrentFile] = useState(randArr[0])
 
   // initialize play button
    useEffect(() => {
     
-    setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
-    setTempArray(randArr)
-    if (randArr[0] !== currentFile) {
+    // setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
+    // setTempArray(randArr)
+     console.log(randArr, currentFile)
+    if (randArr[0] === currentFile) {
       setCurrentFile(randArr[0]);
       setCorrectObj(randArr[0]);
     } else {
