@@ -5,7 +5,7 @@ import Home from './components/Home'
 import Quiz from './components/Quiz'
 import Header from './components/Header'
 import DisplayScores from './components/DisplayScores';
-
+import Footer from './components/Footer'
 function App() {
   const [scores, setScores] = useState([])
 
@@ -23,8 +23,10 @@ function App() {
       </Route>
       <Route path="/scores">
         <DisplayScores scores={scores} setScores={setScores}/>
-        </Route>
-        </div>
+      </Route>
+      </div>
+      <Footer />
+    
     </div>
   );
 }

@@ -19,6 +19,17 @@ code {
   font-style: normal;
 }
 
-/* @font-face {
-  font-family: "Squeler-fill";
-} */
+@font-face {
+  font-family: "Squealer-fill";
+  src: url("./fonts/squealer.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Indie-rock";
+  src: url("./fonts/IndieRock.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Pretendo";
+  src: url("./fonts/Pretendo.ttf") format("truetype");
+}

@@ -30,14 +30,14 @@ const Quiz = (props) => {
         <br />
         </div>
       
-      <div>
+      
         <PlayButton
           setCorrectObj={setCorrectObj}
           // setTempArray={setTempArray}
           // setRandArr = {setRandArr}
           randArr={randArr}
           clicked={clicked} />
-      </div>
+   
       
       <div className="button-container">
         <ChoiceButtonList

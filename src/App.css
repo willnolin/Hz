@@ -31,27 +31,9 @@
 }
 .metal {
   background-image: url(./images/metal.jpeg);
-  visibility: visible;
 }
-
-.carbon {
-  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(
-      #1d1d1d 25%,
-      #1a1a1a 25%,
-      #1a1a1a 50%,
-      transparent 50%,
-      transparent 75%,
-      #242424 75%,
-      #242424
-    );
-  background-color: #131313;
-  background-size: 20px 20px;
-  background-clip: content-box;
+a {
+  text-decoration: none;
 }
 .header-container {
   display: flex;
@@ -62,35 +44,32 @@
   top: 0;
   height: 70px;
   width: 100vw;
-  /* background-color: #a0937d; */
   background-image: url(./images/wood-pat.jpeg);
   box-shadow: -5px -5px 3px rgba(0, 0, 0, 0.4) inset;
-  /* background: conic-gradient(
-    from 45deg,
-    #000104 0,
-    #000004 90deg,
-    #000337 90deg,
-    #000337 180deg,
-    #0f0f10 180deg,
-    #151518 270deg,
-    #2e3032 270deg,
-    #4d5255 360deg
-  );
-  background-size: 0.5em 0.5em; */
-
   font-family: "Squealer";
 }
-/* .inner-header {
-  display: flex;
-  background-color: rgba(156, 154, 154, 1);
-  height: 30px;
-  width: 90vw;
-} */
+
 .nav-bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 300px;
+  height: 75px;
 }
+
+.scores-link {
+  color: rgb(10, 9, 11) !important;
+  background-color: rgba(156, 154, 154, 0.4);
+  text-decoration: none;
+  font-family: "Squealer-fill";
+  font-size: 30px;
+}
+
+.scores-link:visited {
+  color: rgb(9, 8, 9);
+  text-decoration: none;
+}
+
 .app-title {
   font-size: 40px;
   height: fit-content;
@@ -105,7 +84,7 @@
 }
 .main-container {
   display: flex;
-
+  flex: 1 0 auto;
   /* border: 10px solid burlywood; */
 }
 .display-screen-container {
@@ -113,30 +92,30 @@
   flex-direction: row;
   justify-content: space-between;
   width: 256px;
-  height: 100px;
+  height: 200px;
+  margin-top: 20px;
   border-radius: 10px;
   border-style: groove;
   box-shadow: 1px 1px 2px rgb(9, 8, 9);
   background: rgb(9, 8, 9);
 }
-.scores-link {
-  color: rgb(10, 9, 11) !important;
-  background-color: rgba(156, 154, 154, 0.4);
-  text-decoration: none;
-}
+
 /* power button */
 input[type="checkbox"] {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   -webkit-appearance: none;
-  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
-    10px 10px 15px rgba(70, 70, 70, 0.12);
-  position: absolute;
-  transform: translate(-50%, -50%);
+  /* box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+  10px 10px 15px rgba(70, 70, 70, 0.12); */
+  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.5),
+    2px 2px 4px rgba(70, 70, 70, 0.12);
+  /* position: relative; */
+  /* transform: translate(50%, 50%); */
   top: 50%;
-  left: 50%;
+  /* left: 50%; */
   border-radius: 50%;
   border: 8px solid #ececec;
+  background-color: #ececec;
   outline: none;
   display: flex;
   align-items: center;
@@ -146,14 +125,14 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::after {
   font-family: FontAwesome;
-  content: "\f011";
-  color: #ee1414;
-  font-size: 70px;
+  content: "\f01d";
+  color: #000000;
+  font-size: 65px;
 }
 
 input[type="checkbox"]:checked {
-  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
-    10px 10px 15px rgba(70, 70, 70, 0.12),
+  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.5),
+    4px 4px 6px rgba(87, 237, 134, 0.12),
     inset -10px -10px 15px rgba(255, 255, 255, 0.5),
     inset 10px 10px 15px rgba(70, 70, 70, 0.12);
 }
@@ -162,17 +141,15 @@ input[type="checkbox"]:checked::after {
   color: #15e38a;
 }
 
-.scores-link:visited {
-  color: rgb(9, 8, 9);
-  text-decoration: none;
-}
 .gameplay-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: rgb(9, 8, 9); */
-  height: 385px;
-  width: 256px;
+  margin-top: 100px;
+  background: rgba(151, 148, 151, 0.75);
+  height: 500px;
+  width: 300px;
+  border-radius: 5px;
   /* border-radius: 10px;
   border-style: groove;
   box-shadow: 1px 1px 2px rgb(9, 8, 9); */
@@ -185,13 +162,19 @@ input[type="checkbox"]:checked::after {
   text-shadow: 1px 1px 2px rgb(101, 186, 120);
 }
 
+.play-button {
+  margin-top: 20px;
+  width: 100px;
+}
+
 .button-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 20px;
   /* justify-content: space-around; */
-  height: 250px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
 }
 
 .button-list {
@@ -199,42 +182,18 @@ input[type="checkbox"]:checked::after {
   justify-content: space-between;
 }
 
-#play-button {
-  width: 60px;
-}
-
-.fas {
-  color: seashell;
-}
-
-.fa-play-circle {
-  display: block;
-  font-size: 50px;
-  color: rgb(101, 220, 127);
-  text-shadow: 1px 1px 2px rgb(101, 186, 120);
-}
-.fa-pause-circle {
-  display: block;
-  font-size: 50px;
-  color: rgb(101, 220, 127);
-  text-shadow: 1px 1px 2px rgb(101, 186, 120);
-}
-.far {
-  width: 50px;
-}
-.far:hover {
-  color: rgb(29, 244, 75);
-}
-
 .choice-btn {
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: space-around; */
   align-items: center;
-  height: 45px;
-  width: 100px;
+  height: 80px;
+  width: 120px;
   margin: 10px;
   box-shadow: 2px 2px 2px rgb(0, 0, 0);
+  border-radius: 3px;
+  font-family: "Indie-rock";
+  font-size: 27px;
 }
 
 .result-message {
@@ -248,6 +207,7 @@ input[type="checkbox"]:checked::after {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-top: 117px;
   background: rgb(9, 8, 9);
   height: 385px;
   width: 256px;
@@ -272,16 +232,16 @@ input[type="checkbox"]:checked::after {
   width: 200px;
 }
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 form {
@@ -289,30 +249,49 @@ form {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: #fefefe;
-  margin: 20% auto;
+  background: radial-gradient(#e9e1e1, #9198e5);
+  margin: 50% auto;
   padding: 10px;
   border: 1px solid #888;
+  border-radius: 5px;
   width: 50%;
+  font-family: "Indie-rock";
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* position: sticky; */
+  flex-shrink: 0;
+  bottom: 0;
+  height: 70px;
+  width: 100vw;
+  /* background-color: #a0937d; */
+  background-image: url(./images/wood-pat.jpeg);
+  box-shadow: -5px -5px 3px rgba(0, 0, 0, 0.4) inset;
 }
 
 /* 
-#btn0 {
-  display: flex;
-  order: 0;
+.fas {
+  color: seashell;
 }
 
-#btn1 {
-  display: flex;
-  order: 1;
+.fa-play-circle {
+  font-size: 50px;
+  color: rgb(101, 220, 127);
+  text-shadow: 1px 1px 2px rgb(101, 186, 120);
 }
-
-#btn2 {
-  display: flex;
-  order: 2;
+.fa-pause-circle {
+  display: block;
+  font-size: 50px;
+  color: rgb(101, 220, 127);
+  text-shadow: 1px 1px 2px rgb(101, 186, 120);
 }
-
-#btn3 {
-  display: flex;
-  order: 3;
+.far {
+  width: 50px;
+}
+.far:hover {
+  color: rgb(29, 244, 75);
 } */

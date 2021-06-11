@@ -9,7 +9,7 @@ export default function PlayButton(props) {
 
   const [playing, setPlaying] = useState(false);
   const [currentFile, setCurrentFile] = useState(randArr[0])
-
+  const [isChecked, setIsChecked] = useState(false)
  
    useEffect(() => {
     if (randArr[0] === currentFile) {
@@ -28,28 +28,33 @@ export default function PlayButton(props) {
     onend: () => {
       console.log('ended');
       setPlaying(false)
+      setIsChecked(false)
     },
   })
 
-  const handlePlay = () => {
-    setPlaying(true)
-    play()
+  const handleClick = () => {
+    if (playing) {
+      setPlaying(false)
+      setIsChecked(false)
+      stop()
+    } else {
+      setPlaying(true)
+      setIsChecked(true)
+      play()
+    }
   }
   
-  const handleStop = () => {
-    setPlaying(false)
-    stop()
-    }
 
   return (
     <div className="play-button">
      
-      {playing ? (
+      {/* {playing ? (
         <i className="far fa-pause-circle" onClick={handleStop}></i>
         ) : (
         <i className="far fa-play-circle" onClick={handlePlay}></i>
-      )}
-       {/* <input type="checkbox"  onClick={play()}></input> */}
+      )} */}
+
+       <input type="checkbox" onChange={handleClick} checked={isChecked} ></input>
 
     </div>
   )
