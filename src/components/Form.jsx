@@ -5,7 +5,7 @@ import { setHighScore, getAllHighScores } from '../services/api.js'
 
 export default function Form(props) {
   // const scoreRef = useRef(null)
-  const { score, scores, setScores, show, clicked } = props;
+  const { score, scores, setScores, show } = props;
 
   const formObj = {
     user : "",
@@ -13,9 +13,8 @@ export default function Form(props) {
 
   }
   const [input, setInput]= useState(formObj);
-  const [highScoreMessage, setHighScoreMessage] = useState("Congrats")
   const history = useHistory("")
-  console.log(highScoreMessage)
+ 
   // get high scores  from API
   useEffect(()=> {
     const fetchData = async () => {
@@ -26,27 +25,13 @@ export default function Form(props) {
   
     } 
     fetchData()
+    // eslint-disable-next-line
   }, []);
   
   const sortScores = (array)=> {
     return array.sort((a, b) => b.fields.score - a.fields.score)
   }
-  
-  
-  // useEffect(() => {
-    // console.log(scores) 
-    // if (score > scores[0].fields.score) {
-    //    setHighScoreMessage("New High Score!")
-      
-    //  } else {
-    //    setHighScoreMessage("Congrats")
-      
-    //  }
-  //  }, [scores])
-      
-
-
-
+    
   // const [show, setShow] = useState("none")
   const handleChange = async (e) => {
     const {name, value} = e.target;

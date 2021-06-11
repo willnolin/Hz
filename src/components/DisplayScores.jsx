@@ -1,4 +1,5 @@
-import {useState, useEffect} from 'react'
+import { useEffect } from 'react'
+
 
 import { getAllHighScores } from '../services/api.js'
 
@@ -14,6 +15,7 @@ const {scores, setScores} = props
       setScores(data);
     } 
    fetchData()
+  // eslint-disable-next-line
   }, []);
 
   // const sortScores = (array)=> {

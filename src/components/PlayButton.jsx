@@ -22,22 +22,23 @@ export default function PlayButton(props) {
   }, [clicked])
  
   // set useSound
-  const [play, { stop }] = useSound(currentFile.file, {
+  // const [play, { stop }] = useSound(currentFile.file, {
+    const [play] = useSound(currentFile.file, {
     onend: () => {
       console.log('ended');
       setPlaying(false)
     },
   })
 
-  const handlePlay = () => {
-    setPlaying(true)
-    play()
-  }
+  // const handlePlay = () => {
+  //   setPlaying(true)
+  //   play()
+  // }
   
-  const handleStop = () => {
-    setPlaying(false)
-    stop()
-    }
+  // const handleStop = () => {
+  //   setPlaying(false)
+  //   stop()
+  //   }
 
   return (
     <div className="play-button">
@@ -47,7 +48,7 @@ export default function PlayButton(props) {
         ) : (
         <i className="far fa-play-circle" onClick={handlePlay}></i>
       )} */}
-       <input type="checkbox"></input>
+       <input type="checkbox"  onClick={play()}></input>
 
     </div>
   )
