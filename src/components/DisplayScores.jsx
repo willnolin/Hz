@@ -18,10 +18,6 @@ const {scores, setScores} = props
   // eslint-disable-next-line
   }, []);
 
-  // const sortScores = (array)=> {
-  //   return (array.sort((a,b) =>  b.fields.score-a.fields.score ))
-  // }
-
   return (
     <>
     <div className="scores-list"> 

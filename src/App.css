@@ -8,33 +8,28 @@
 
   */
 
-/* This animates the circle when it switches to play */
-/* #circle {
-  transition: stroke-dashoffset 300ms ease-in;
-  stroke-dashoffset: 0;
-  fill: none;
-}
-#circle.play {
-  stroke-dashoffset: 314;
-} */
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
-
-  /* background-color: #334443; */
-
   height: 100vh;
   width: 100vw;
+  /* overflow: auto; */
 }
+
 .metal {
   background-image: url(./images/metal.jpeg);
+  /* height: 100vh;
+  width: 100vw; */
+  /* margin: 0; */
 }
+
 a {
   text-decoration: none;
 }
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -86,18 +81,6 @@ a {
   display: flex;
   flex: 1 0 auto;
   /* border: 10px solid burlywood; */
-}
-.display-screen-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 256px;
-  height: 200px;
-  margin-top: 20px;
-  border-radius: 10px;
-  border-style: groove;
-  box-shadow: 1px 1px 2px rgb(9, 8, 9);
-  background: rgb(9, 8, 9);
 }
 
 /* power button */
@@ -155,11 +138,39 @@ input[type="checkbox"]:checked::after {
   box-shadow: 1px 1px 2px rgb(9, 8, 9); */
 }
 
+.display-screen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 256px;
+  height: 200px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border-style: groove;
+  box-shadow: 1px 1px 2px rgb(9, 8, 9);
+  background: rgb(9, 8, 9);
+}
+.score-xxx-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 250px;
+}
+
 #score,
 #xxx,
 .result-message {
+  font-size: 20px;
   color: rgb(29, 244, 75);
   text-shadow: 1px 1px 2px rgb(101, 186, 120);
+}
+
+.result-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 325px; */
 }
 
 .play-button {
@@ -171,15 +182,11 @@ input[type="checkbox"]:checked::after {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 20px;
   /* justify-content: space-around; */
   height: 300px;
   width: 300px;
-}
-
-.button-list {
-  /* display: flex; */
-  justify-content: space-between;
 }
 
 .choice-btn {
@@ -194,13 +201,6 @@ input[type="checkbox"]:checked::after {
   border-radius: 3px;
   font-family: "Indie-rock";
   font-size: 27px;
-}
-
-.result-message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 325px;
 }
 
 .scores-list {
@@ -263,14 +263,16 @@ form {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  /* text-align: center; */
   /* position: sticky; */
   flex-shrink: 0;
-  bottom: 0;
+  /* bottom: 0; */
   height: 70px;
-  width: 100vw;
+  width: 100%;
   /* background-color: #a0937d; */
   background-image: url(./images/wood-pat.jpeg);
   box-shadow: -5px -5px 3px rgba(0, 0, 0, 0.4) inset;
+  /* overflow: auto; */
 }
 
 /* 

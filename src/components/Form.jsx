@@ -47,7 +47,7 @@ export default function Form(props) {
     e.preventDefault()
     await setHighScore(input);
     setInput({})
-    history.push("/")
+    history.push("/scores/")
   }
 
 

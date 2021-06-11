@@ -48,12 +48,6 @@ export default function PlayButton(props) {
   return (
     <div className="play-button">
      
-      {/* {playing ? (
-        <i className="far fa-pause-circle" onClick={handleStop}></i>
-        ) : (
-        <i className="far fa-play-circle" onClick={handlePlay}></i>
-      )} */}
-
        <input type="checkbox" onChange={handleClick} checked={isChecked} ></input>
 
     </div>

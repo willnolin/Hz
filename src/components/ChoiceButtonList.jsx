@@ -56,7 +56,8 @@ export default function ChoiceButtonList(props) {
     }
   
     return (
-      <div className="button-list">
+      <div className="button-container">
+       
         {buttons.map((btn, index) => {
           console.log(correctObj)
           return <button
@@ -66,8 +67,8 @@ export default function ChoiceButtonList(props) {
             onClick={handleChoice}
             >{!btn ? correctObj.name : btn.name}</button>
         })}
-  
       </div>
+    
     )
   }
 

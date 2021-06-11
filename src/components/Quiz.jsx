@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react'
+import Display from "./Display"
 import PlayButton from "./PlayButton"
 import ChoiceButtonList from "./ChoiceButtonList"
 import Form from "./Form"
@@ -23,45 +24,37 @@ const Quiz = (props) => {
 
   return (
     <div className="gameplay-container">
-      <div className="display-screen-container">
-      <h4 id="score">{`${scoreCount} pts`}</h4>
-        <h4 id="xxx">{[...Array(wrongCount)].map(e => 'X')}</h4> 
-        <p className="result-message">{message}</p>
-        <br />
-        </div>
-      
-      
-        <PlayButton
-          setCorrectObj={setCorrectObj}
-          // setTempArray={setTempArray}
-          // setRandArr = {setRandArr}
-          randArr={randArr}
-          clicked={clicked} />
    
+      <Display
+        scoreCount={scoreCount}
+        wrongCount={wrongCount}
+        message={message} />
+ 
+      <PlayButton
+        setCorrectObj={setCorrectObj}
+        randArr={randArr}
+        clicked={clicked} />
+  
+      <ChoiceButtonList
+        randArr={randArr}
+        setRandArr = {setRandArr}
+        mp3Array = {mp3Array}
+        correctObj={correctObj}
+        wrongCount={wrongCount}
+        setClicked={setClicked}
+        setMessage={setMessage}
+        setScoreCount={setScoreCount}
+        setWrongCount={setWrongCount}
+        setShow={setShow}
+      />
       
-      <div className="button-container">
-        <ChoiceButtonList
-          // tempArray={tempArray}
-          randArr={randArr}
-          setRandArr = {setRandArr}
-          mp3Array = {mp3Array}
-          correctObj={correctObj}
-          wrongCount={wrongCount}
-          setClicked={setClicked}
-          setMessage={setMessage}
-          setScoreCount={setScoreCount}
-          setWrongCount={setWrongCount}
-          setShow={setShow}
-        />
-       
-      </div>
-        <Form
-          score={scoreCount}
-          scores={props.scores}
-          setScores={props.setScores}
-          show={show}
-          clicked={clicked}/>
-      </div>
+      <Form
+        score={scoreCount}
+        scores={props.scores}
+        setScores={props.setScores}
+        show={show}
+        clicked={clicked}/>
+    </div>
   );
 }
 
