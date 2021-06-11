@@ -7,7 +7,7 @@ export default function PlayButton(props) {
     clicked,
   } = props;
 
-  // const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const [currentFile, setCurrentFile] = useState(randArr[0])
 
  
@@ -23,33 +23,33 @@ export default function PlayButton(props) {
   }, [clicked])
  
   // set useSound
-  // const [play, { stop }] = useSound(currentFile.file, {
-    const [play] = useSound(currentFile.file, {
+  const [play, { stop }] = useSound(currentFile.file, {
+    // const [play] = useSound(currentFile.file, {
     onend: () => {
       console.log('ended');
-      // setPlaying(false)
+      setPlaying(false)
     },
   })
 
-  // const handlePlay = () => {
-  //   setPlaying(true)
-  //   play()
-  // }
+  const handlePlay = () => {
+    setPlaying(true)
+    play()
+  }
   
-  // const handleStop = () => {
-  //   setPlaying(false)
-  //   stop()
-  //   }
+  const handleStop = () => {
+    setPlaying(false)
+    stop()
+    }
 
   return (
     <div className="play-button">
      
-      {/* {playing ? (
+      {playing ? (
         <i className="far fa-pause-circle" onClick={handleStop}></i>
         ) : (
         <i className="far fa-play-circle" onClick={handlePlay}></i>
-      )} */}
-       <input type="checkbox"  onClick={play()}></input>
+      )}
+       {/* <input type="checkbox"  onClick={play()}></input> */}
 
     </div>
   )
