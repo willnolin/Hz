@@ -7,7 +7,7 @@ export default function PlayButton(props) {
     clicked,
   } = props;
 
-  const [playing, setPlaying] = useState(false);
+  // const [playing, setPlaying] = useState(false);
   const [currentFile, setCurrentFile] = useState(randArr[0])
 
  
@@ -18,7 +18,8 @@ export default function PlayButton(props) {
     } else {
       setCurrentFile(randArr[1]);
       setCorrectObj(randArr[1]);
-    }  
+    }
+     // eslint-disable-next-line
   }, [clicked])
  
   // set useSound
@@ -26,7 +27,7 @@ export default function PlayButton(props) {
     const [play] = useSound(currentFile.file, {
     onend: () => {
       console.log('ended');
-      setPlaying(false)
+      // setPlaying(false)
     },
   })
 
