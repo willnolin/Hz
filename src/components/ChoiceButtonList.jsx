@@ -31,13 +31,6 @@ export default function ChoiceButtonList(props) {
       randArr[3],
       randArr[4],
     ].sort(() => Math.random() -0.5 ))
-    // tempArray && setButtons([
-    //   correctObj,
-    //   tempArray[2],
-    //   tempArray[3],
-    //   tempArray[4],
-    // ].sort(() => Math.random() -0.5 ))
-
   }, [correctObj, randArr])
   
   
@@ -64,7 +57,6 @@ export default function ChoiceButtonList(props) {
   
     return (
       <div className="button-list">
-        {console.log(buttons)}
         {buttons.map((btn, index) => {
           console.log(correctObj)
           return <button
@@ -78,20 +70,4 @@ export default function ChoiceButtonList(props) {
       </div>
     )
   }
-  // ======= Shuffle array =======//
-  //https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
-  // function shuffle(array) {
-  //   let currentId = array.length;
-  // // There remain elements to shuffle
-  //   while (0 !== currentId) {
-  //     // Pick a remaining element
-  //     let randomId = Math.floor(Math.random() * currentId);
-  //     currentId -= 1;
-  //   // Swap it with the current element.
-  //     let tmp = array[currentId];
-  //     array[currentId] = array[randomId];
-  //     array[randomId] = tmp;
-  //   }
-  //   return array;
-  // }
- // ==================================// 
+
