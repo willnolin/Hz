@@ -36,7 +36,7 @@ function App() {
       <Route path="/scores">
         <DisplayScores scores={scores} setScores={setScores}/>
         </Route>
-        <Canvas draw={draw}/>
+        {/* <Canvas draw={draw}/> */}
       </div>
       
       <Footer />

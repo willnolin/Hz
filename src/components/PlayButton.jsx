@@ -12,43 +12,53 @@ export default function PlayButton(props) {
   const [isChecked, setIsChecked] = useState(false)
  
    useEffect(() => {
-    if (randArr[0] === currentFile) {
-      setCurrentFile(randArr[0]);
-      setCorrectObj(randArr[0]);
-    } else {
-      setCurrentFile(randArr[1]);
-      setCorrectObj(randArr[1]);
-    }
+    
+       if (randArr[0] === currentFile) {
+         setCurrentFile(randArr[0]);
+         setCorrectObj(randArr[0]);
+       } else {
+         setCurrentFile(randArr[1]);
+         setCorrectObj(randArr[1]);
+       }
+   
      // eslint-disable-next-line
   }, [clicked])
  
   // set useSound
   const [play, { sound }] = useSound(currentFile.file, {
     // const [play] = useSound(currentFile.file, {
+    // onplay: () => {
+    //   sound?.fade(0, 1, 500)
+    // },
     onend: () => {
-      console.log('ended');
       setPlaying(false)
       setIsChecked(false)
-      sound?.fade(1, 0, 1000)
+      // console.log("Button Green:", isChecked)
     },
+    
   })
-
+  
   const handleClick = () => {
     if (playing) {
+      sound?.fade(1, 0, 500)
       setPlaying(false)
       setIsChecked(false)
-      sound.stop()
+      // console.log("Button Green:", isChecked)
+
     } else {
       setPlaying(true)
       setIsChecked(true)
       play()
+      sound?.fade(0, 1, 500)
+      // console.log("Button Green:", isChecked)
     }
   }
   
 
   return (
     <div className="play-button">
-     
+      {/* {console.log('Button Green:', isChecked */}
+      {/* )} */}
        <input type="checkbox" onChange={handleClick} checked={isChecked} ></input>
 
     </div>

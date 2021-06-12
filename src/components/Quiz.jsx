@@ -53,7 +53,9 @@ const Quiz = (props) => {
         scores={props.scores}
         setScores={props.setScores}
         show={show}
-        clicked={clicked}/>
+        clicked={clicked}
+      />
+    
     </div>
   );
 }

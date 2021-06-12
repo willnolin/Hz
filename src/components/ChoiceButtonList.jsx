@@ -20,31 +20,40 @@ export default function ChoiceButtonList(props) {
     setShow,
   } = props;
   const [buttons, setButtons] = useState([]);
- 
-  // const [clicked, setClicked] = useState(false)
+  const [btnColor, setBtnColor] = useState("none")
+  
+  console.log(buttons)
+  
   useEffect(() => {
-    console.log(randArr)
-    console.log(correctObj)
+   
+    setTimeout(() => {
     randArr && setButtons([
       correctObj && correctObj,
       randArr[2],
       randArr[3],
       randArr[4],
-    ].sort(() => Math.random() -0.5 ))
+    ].sort(() => Math.random() - 0.5))
+      setMessage("")
+  }, 3000)
   }, [correctObj, randArr])
-  
-  
+
     //=========handle the button choise ========//
+    
     const handleChoice = (e) => {
       setClicked((prevClick) => !prevClick)
       setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
+      console.log(e)
       if (correctObj.name === e.target.name) {
         setMessage("Correct!")
+        setBtnColor("green")
+        e.target.style.backgroundColor = btnColor;
         setScoreCount((prevScore) => prevScore + 1)
       } else {
         // if three strikes, then you're done, else add an X
         if (wrongCount < 2) {
           setMessage("Incorrect..")
+          setBtnColor("red")
+          e.target.style.backgroundColor = btnColor;
           setWrongCount((prevCount) => prevCount + 1)        
         
         } else {
@@ -52,20 +61,23 @@ export default function ChoiceButtonList(props) {
           setMessage("Game Over") // this is where you'll display the high score form
           setShow("block")
         }
-      }   
+      }
+      
     }
   
     return (
       <div className="button-container">
        
         {buttons.map((btn, index) => {
-          console.log(correctObj)
+        
           return <button
             className={`choice-btn`}
+            id = {`btn${index}`}
             key={index}
-            name={`${!btn ? correctObj.name : btn.name}`}
+            // style = {{backgroundColor: btnColor}}
+            name={`${!btn ? correctObj?.name : btn?.name}`}
             onClick={handleChoice}
-            >{!btn ? correctObj.name : btn.name}</button>
+            >{!btn ? correctObj?.name : btn?.name}</button>
         })}
       </div>
     
