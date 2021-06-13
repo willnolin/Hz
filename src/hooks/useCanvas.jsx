@@ -8,23 +8,23 @@ const useCanvas = (draw) => {
     const context = canvas.getContext('2d')
     let frameCount = 0;
     let animationFrameId;
-    
+     const render = () => {
+    frameCount++;
+    draw(context, frameCount);
+    animationFrameId = window.requestAnimationFrame(render)
+  }
+  render()
+  
+  return () => {
+    window.cancelAnimationFrame(animationFrameId)
+  }
     //recursively calling render for each frame.
-    const render = () => {
-      frameCount++;
-      draw(context, frameCount);
-      animationFrameId = window.requestAnimationFrame(render)
-    }
-    render()
-    
-    return () => {
-      window.cancelAnimationFrame(animationFrameId)
-    }
   }, [draw])
-
+  
   return (
     canvasRef
-  );
-}
-
-export default useCanvas;
+    );
+  }
+  
+  export default useCanvas;
+  

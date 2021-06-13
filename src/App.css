@@ -200,7 +200,7 @@ input[type="checkbox"]:checked::after {
   height: 60px;
   width: 100px;
   margin: 10px;
-  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.4); */
   /* background-color: none; */
   border-radius: 5px;
   font-family: "Indie-rock";
@@ -294,17 +294,8 @@ form {
   /* background-color: #a0937d; */
   background-image: url(./images/wood-pat.jpeg);
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4) inset;
-  /* overflow: auto; */
 }
 
-/* .knob {
-  width: 50px;
-}
-
-.fader {
-  width: 50px;
-  transform: rotate(90deg);
-} */
 /* =========== Phone horizontal =============*/
 @media screen and (max-height: 548px) {
   .gameplay-container {
@@ -314,7 +305,7 @@ form {
     align-items: center;
     /* margin-top: 100px; */
     /* background: rgba(151, 148, 151, 0.75); */
-    /* height: 450px; */
+    height: 340px;
     width: 600px;
   }
 
