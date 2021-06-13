@@ -8,7 +8,7 @@ export default function Header() {
      
       <div className = "nav-bar" >
         <Link className="nav-link" to="/quiz">
-          <h3>START</h3>
+          <h3>NEW GAME</h3>
         </Link>
         <Link className= "nav-link" to="/scores">
           <h3 >HIGH SCORES</h3>

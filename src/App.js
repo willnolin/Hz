@@ -1,12 +1,14 @@
 import './App.css';
 import { useState } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Home from './components/Home'
 import Quiz from './components/Quiz'
 import Header from './components/Header'
 import DisplayScores from './components/DisplayScores';
 import Footer from './components/Footer'
 import Canvas from './components/Canvas';
+import knob from "./images/knob.png"
+import fader from "./images/fader.png"
 
 function App() {
   const [scores, setScores] = useState([]);
@@ -27,16 +29,20 @@ function App() {
       <Header />
       
       <div className="main-container">
-      <Route path="/" exact>
-        <Home />
-      </Route>
-      <Route path="/quiz">
-        <Quiz scores={scores} setScores={setScores} />
-      </Route>
-      <Route path="/scores">
-        <DisplayScores scores={scores} setScores={setScores}/>
+        <img className="knob" src={knob} alt="knob1"></img>
+      <Switch>
+        <Route path="/quiz">
+          <Quiz scores={scores} setScores={setScores} />
         </Route>
-        {/* <Canvas draw={draw}/> */}
+        <Route path="/scores">
+          <DisplayScores scores={scores} setScores={setScores}/>
+          </Route>
+          {/* <Canvas draw={draw}/> */}
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+        <img className="fader" src={fader} alt="fader1"></img>
       </div>
       
       <Footer />

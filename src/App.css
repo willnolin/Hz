@@ -69,6 +69,8 @@ a.nav-link:hover {
 .main-container {
   display: flex;
   flex: 1 0 auto;
+  flex-direction: column;
+  align-items: center;
   /* border: 10px solid burlywood; */
 }
 
@@ -81,6 +83,7 @@ a.nav-link:hover {
   height: 450px;
   width: 300px;
   border-radius: 5px;
+  /* border: 1px solid black; */
   /* border-radius: 10px;
   border-style: groove;
   box-shadow: 1px 1px 2px rgb(9, 8, 9); */
@@ -283,6 +286,14 @@ form {
   /* overflow: auto; */
 }
 
+.knob {
+  width: 50px;
+}
+
+.fader {
+  width: 50px;
+  transform: rotate(90deg);
+}
 /* =========== Phone horizontal =============*/
 @media screen and (max-height: 420px) {
   .gameplay-container {

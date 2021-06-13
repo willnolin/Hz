@@ -46,8 +46,8 @@ export default function Form(props) {
   const handleSubmit = async (e) => { 
     e.preventDefault()
     await setHighScore(input);
-    setInput({})
-    history.push("/scores/")
+    setInput({});
+    history.push("/scores/");
   }
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Display from "./Display"
 import PlayButton from "./PlayButton"
 import ChoiceButtonList from "./ChoiceButtonList"
@@ -21,6 +21,15 @@ const Quiz = (props) => {
   const [clicked, setClicked] = useState(false)
  
   const [show, setShow] = useState("none")
+  
+  // useEffect(() => {
+  //   sessionStorage.setItem('scoreStorage', scoreCount)
+  //   sessionStorage.setItem('wrongCountStorage', wrongCount )
+  // }, [scoreCount, wrongCount])
+  // console.log(scoreCount, wrongCount)
+  // if (show === "block") {
+  //   sessionStorage.clear();
+  // }
 
   return (
     <div className="gameplay-container">
@@ -47,7 +56,6 @@ const Quiz = (props) => {
         setWrongCount={setWrongCount}
         setShow={setShow}
       />
-      
       <Form
         score={scoreCount}
         scores={props.scores}

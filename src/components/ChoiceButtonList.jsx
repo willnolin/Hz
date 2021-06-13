@@ -45,15 +45,15 @@ export default function ChoiceButtonList(props) {
       console.log(e)
       if (correctObj.name === e.target.name) {
         setMessage("Correct!")
-        setBtnColor("green")
-        e.target.style.backgroundColor = btnColor;
+        // setBtnColor("green")
+        // e.target.style.backgroundColor = btnColor;
         setScoreCount((prevScore) => prevScore + 1)
       } else {
         // if three strikes, then you're done, else add an X
         if (wrongCount < 2) {
           setMessage("Incorrect..")
-          setBtnColor("red")
-          e.target.style.backgroundColor = btnColor;
+          // setBtnColor("red")
+          // e.target.style.backgroundColor = btnColor;
           setWrongCount((prevCount) => prevCount + 1)        
         
         } else {
