@@ -29,7 +29,7 @@ function App() {
       <Header />
       
       <div className="main-container">
-        <img className="knob" src={knob} alt="knob1"></img>
+        {/* <img className="knob" src={knob} alt="knob1"></img> */}
       <Switch>
         <Route path="/quiz">
           <Quiz scores={scores} setScores={setScores} />
@@ -42,7 +42,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
-        <img className="fader" src={fader} alt="fader1"></img>
+        {/* <img className="fader" src={fader} alt="fader1"></img> */}
       </div>
       
       <Footer />

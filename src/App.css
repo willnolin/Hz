@@ -69,6 +69,7 @@ a.nav-link:hover {
 .main-container {
   display: flex;
   flex: 1 0 auto;
+  /* margin-top: 50%; */
   flex-direction: column;
   align-items: center;
   /* border: 10px solid burlywood; */
@@ -286,16 +287,16 @@ form {
   /* overflow: auto; */
 }
 
-.knob {
+/* .knob {
   width: 50px;
 }
 
 .fader {
   width: 50px;
   transform: rotate(90deg);
-}
+} */
 /* =========== Phone horizontal =============*/
-@media screen and (max-height: 420px) {
+@media screen and (max-height: 548px) {
   .gameplay-container {
     display: flex;
     flex-direction: row;
@@ -331,7 +332,7 @@ form {
 
 /* ================= TABLET / IPAD / Desktop  =================*/
 /* @media screen and (min-width: 700px) and (min-height: 770px) { */
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 760px) and (min-height: 760px) {
   .header-container {
     height: 100px;
     width: 100vw;
@@ -379,7 +380,7 @@ form {
     align-items: center;
     margin-top: 150px;
     height: 750px;
-    width: 400px;
+    width: 500px;
     border-radius: 5px;
   }
 
@@ -448,9 +449,10 @@ form {
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 5px;
+    padding-right: 9px;
     /* justify-content: space-around; */
     height: 250px;
-    width: 250px;
+    width: 350px;
   }
 
   .choice-btn {
@@ -458,10 +460,10 @@ form {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 60px;
-    width: 100px;
+    height: 90px;
+    width: 150px;
     margin: 10px;
-    font-size: 22px;
+    font-size: 28px;
   }
   #btn0 {
     background-color: none;
