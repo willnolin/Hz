@@ -7,6 +7,7 @@ export default function Display(props) {
     <>
     <div className="display-screen-container">
       <div className="score-xxx-row">
+        {console.log(wrongCount)}
         <h4 id="xxx">{[...Array(wrongCount)].map(e => 'X')}</h4>
         <h4 id="score">{`Score: ${scoreCount}`}</h4>
       </div>      

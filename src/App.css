@@ -55,10 +55,16 @@ a.nav-link:hover {
 }
 
 .app-title {
-  font-size: 40px;
+  color: rgb(10, 9, 11);
+  font-size: 35px;
   height: fit-content;
-  margin: 5px;
+  margin-top: 5px;
 }
+.app-title:hover {
+  color: rgb(209, 193, 103);
+  text-decoration: none;
+}
+
 .screw {
   width: 30px;
   transform: rotate(20deg);
@@ -66,6 +72,7 @@ a.nav-link:hover {
 .left {
   transform: rotate(45deg);
 }
+
 .main-container {
   display: flex;
   flex: 1 0 auto;
@@ -75,6 +82,9 @@ a.nav-link:hover {
   /* border: 10px solid burlywood; */
 }
 
+.home-container {
+  margin-top: 50%;
+}
 .gameplay-container {
   display: flex;
   flex-direction: column;

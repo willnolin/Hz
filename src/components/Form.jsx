@@ -5,7 +5,7 @@ import { setHighScore, getAllHighScores } from '../services/api.js'
 
 export default function Form(props) {
   // const scoreRef = useRef(null)
-  const { score, scores, setScores, show } = props;
+  const { setActiveGame, score, scores, setScores, show, setShow } = props;
 
   const formObj = {
     user : "",
@@ -47,6 +47,8 @@ export default function Form(props) {
     e.preventDefault()
     await setHighScore(input);
     setInput({});
+    setActiveGame(false);
+    setShow("none")
     history.push("/scores/");
   }
 

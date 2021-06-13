@@ -12,25 +12,23 @@ import {
 } from '../sounds/index.js'
 
 const Quiz = (props) => {
+  const {
+    setActiveGame, 
+    scores,
+    setScores,
+    scoreCount,
+    setScoreCount,
+    wrongCount,
+    setWrongCount,
+    show,
+    setShow,
+  } = props;
+  
   const [randArr, setRandArr] = useState([...mp3Array].sort(() => Math.random() - 0.5))
   const [correctObj, setCorrectObj] = useState(null);
   const [message, setMessage] = useState("");
-  const [scoreCount, setScoreCount] = useState(0);
-  const [wrongCount,  setWrongCount] = useState(0)
-
-  const [clicked, setClicked] = useState(false)
- 
-  const [show, setShow] = useState("none")
+  const [clicked, setClicked] = useState(false);
   
-  // useEffect(() => {
-  //   sessionStorage.setItem('scoreStorage', scoreCount)
-  //   sessionStorage.setItem('wrongCountStorage', wrongCount )
-  // }, [scoreCount, wrongCount])
-  // console.log(scoreCount, wrongCount)
-  // if (show === "block") {
-  //   sessionStorage.clear();
-  // }
-
   return (
     <div className="gameplay-container">
    
@@ -57,10 +55,12 @@ const Quiz = (props) => {
         setShow={setShow}
       />
       <Form
+        setActiveGame ={setActiveGame}
         score={scoreCount}
-        scores={props.scores}
-        setScores={props.setScores}
+        scores={scores}
+        setScores={setScores}
         show={show}
+        setShow={setShow}
         clicked={clicked}
       />
     

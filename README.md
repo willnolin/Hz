@@ -85,10 +85,10 @@ https://api.airtable.com/v0/app67oeILCiV8Nzfc/Table%201
 | Day        | Deliverable                                                  | Status     |
 | ---------- | ------------------------------------------------------------ | ---------- |
 | June 4-6   | Prompt / Wireframes / Component Heirarchy/ Timeframes        | Complete   |
-| June 7     | Project Approval /Pseudo / Airtable / PlayButton/ Get/ Post/ | Incomplete |
-| June 8     | Choice Buttons / Implement Quiz Functionality /Display       | Incomplete |
-| June 9     | Cont. Display / CSS style                                    | Incomplete |
-| June 10    | Advanced Style / MVP                                         | Incomplete |
+| June 7     | Project Approval /Pseudo / Airtable / PlayButton/ Get/ Post/ | Complete   |
+| June 8     | Choice Buttons / Implement Quiz Functionality /Display       | Complete   |
+| June 9     | Cont. Display / CSS style                                    | Complete   |
+| June 10    | Advanced Style / MVP                                         | Complete   |
 | June 11    | Post-MVP                                                     | Incomplete |
 | June 12-13 | continue Post-MVP                                            | Incomplete |
 | June 14    | Presentation                                                 | Incomplete |
@@ -113,9 +113,9 @@ https://api.airtable.com/v0/app67oeILCiV8Nzfc/Table%201
 | Render messages, score count and strikes                       |    H     |      3hrs      |     3hrs      |             |
 | Create Modal (form) for game over                              |    H     |      3hrs      |     2hrs      |             |
 | Display Modal to the screen                                    |    H     |      3hrs      |     2hrs      |             |
-| Implement Routing with all Components                          |    H     |      3hrs      |               |             |
-| Inital styling                                                 |    H     |      3hrs      |               |             |
-| Advanced styling (transitions)                                 |    M     |      3hrs      |               |             |
+| Implement Routing with all Components                          |    H     |      3hrs      |     3hrs      |             |
+| Inital styling                                                 |    H     |      3hrs      |     4hrs      |             |
+| Advanced styling (transitions)                                 |    M     |      3hrs      |     5hrs      |             |
 | Total                                                          |    H     |     46hrs      |               |             |
 
 ## SWOT Analysis

@@ -1,9 +1,49 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
-function Home() {
+import { Link } from 'react-router-dom'
+
+function Home(props) {
+  const {
+    activeGame,
+    setActiveGame,
+    scoreCount,
+    setScoreCount,
+    wrongCount,
+    setWrongCount,
+    show,
+    setShow,
+  } = props;
+  
+  useEffect(() => {
+    localStorage.setItem('scoreStorage', scoreCount)
+    localStorage.setItem('wrongCountStorage', wrongCount)
+  }, [scoreCount, wrongCount])
+  
+  const newGame = () => {
+    localStorage.clear()
+    setScoreCount(0)
+    setWrongCount(0)
+    setActiveGame(true)
+  }
+  
+  // const resumeGame = () => {
+  //   setScoreCount(localStorage.getItem('scoreStorage') || 0)
+  //   setWrongCount(localStorage.getItem('wrongCountStorage') || 0)
+  // }
+
+  
   return (
-    <div>
-      <h1>Welcome to Hz! WHy is this not showing up!?</h1>
+    <div className="home-container">
+      <h1>Welcome to Hz!</h1>
+      <Link to="/quiz">
+        <button onClick={newGame}>New Game</button>
+      </Link>
+      
+      <Link to="/quiz">
+        <button>Resume Game</button>
+      </Link>
+
+
     </div>
   )
 }
