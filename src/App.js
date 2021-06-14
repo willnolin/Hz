@@ -17,17 +17,6 @@ function App() {
   const [scoreCount, setScoreCount] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
   
-  const draw = (ctx, frameCount) => {
-    
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    // ctx.fillStyle = '#000000';
-    ctx.beginPath();
-    ctx.arc(150, 100, 20*(Math.sin(frameCount*0.05)**2), 0, 2*Math.PI);
-    ctx.fill()
-  }
-  
-
-
 
 //DOM rendering 
   return (
@@ -42,8 +31,17 @@ function App() {
       
       <div className="main-container">
         {/* <img className="knob" src={knob} alt="knob1"></img> */}
-      {/* <Canvas draw={draw} /> */}
       <Switch>
+        <Route exact path="/">
+            <Home
+              activeGame={activeGame}
+              setActiveGame = {setActiveGame}
+              scoreCount={scoreCount}
+              setScoreCount={setScoreCount}
+              wrongCount={wrongCount}
+              setWrongCount={setWrongCount}
+            />
+        </Route>
         <Route path="/quiz">
             <Quiz
               setActiveGame = {setActiveGame}
@@ -61,16 +59,6 @@ function App() {
           <DisplayScores scores={scores} setScores={setScores}/>
           </Route>
        
-        <Route exact path="/">
-            <Home
-              activeGame={activeGame}
-              setActiveGame = {setActiveGame}
-              scoreCount={scoreCount}
-              setScoreCount={setScoreCount}
-              wrongCount={wrongCount}
-              setWrongCount={setWrongCount}
-            />
-        </Route>
       </Switch>
        
       </div>

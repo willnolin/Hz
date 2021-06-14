@@ -207,6 +207,26 @@ input[type="checkbox"]:checked::after {
   font-size: 22px;
 }
 
+.welcome {
+  font-family: "Squealer-fill";
+  font-size: 50px;
+}
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  width: 300px;
+  margin: 10px;
+  /* box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.4); */
+  /* background-color: none; */
+  border-radius: 5px;
+  font-family: "Indie-rock";
+  font-size: 22px;
+}
+
 #btn0 {
   background-color: none;
 }
@@ -226,13 +246,13 @@ input[type="checkbox"]:checked::after {
 .scores-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   /* align-items: center; */
   margin-top: 125px;
   background: rgb(9, 8, 9);
-  height: 400px;
+  height: 420px;
   width: 256px;
-  padding-right: 10px;
+  padding: 10px;
   overflow: auto;
   border-radius: 10px;
   border-style: groove;
@@ -308,7 +328,9 @@ form {
     height: 340px;
     width: 600px;
   }
-
+  .home-container {
+    margin-top: 50px;
+  }
   .display-screen-container {
     width: 220px;
     height: 175px;

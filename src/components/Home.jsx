@@ -34,13 +34,13 @@ function Home(props) {
   
   return (
     <div className="home-container">
-      <h1>Welcome to Hz!</h1>
+      <h1 className = "welcome">Welcome to Hz!</h1>
       <Link to="/quiz">
-        <button onClick={newGame}>New Game</button>
+        <button className = "home-btns" onClick={newGame}>NEW GAME</button>
       </Link>
       
       <Link to="/quiz">
-        <button>Resume Game</button>
+        <button className = "home-btns" >RESUME GAME</button>
       </Link>
 
 
