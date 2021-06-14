@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Display from "./Display"
 import PlayButton from "./PlayButton"
 import ChoiceButtonList from "./ChoiceButtonList"

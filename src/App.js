@@ -6,9 +6,7 @@ import Quiz from './components/Quiz'
 import Header from './components/Header'
 import DisplayScores from './components/DisplayScores';
 import Footer from './components/Footer'
-import Canvas from './components/Canvas';
-// import knob from "./images/knob.png"
-// import fader from "./images/fader.png"
+
 
 function App() {
   const [scores, setScores] = useState([]);
@@ -30,11 +28,10 @@ function App() {
       />
       
       <div className="main-container">
-        {/* <img className="knob" src={knob} alt="knob1"></img> */}
+  
       <Switch>
         <Route exact path="/">
             <Home
-              activeGame={activeGame}
               setActiveGame = {setActiveGame}
               scoreCount={scoreCount}
               setScoreCount={setScoreCount}
@@ -56,8 +53,8 @@ function App() {
             />
         </Route>
         <Route path="/scores">
-          <DisplayScores scores={scores} setScores={setScores}/>
-          </Route>
+            <DisplayScores scores={scores} setScores={setScores}/>
+        </Route>
        
       </Switch>
        

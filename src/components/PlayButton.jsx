@@ -26,14 +26,9 @@ export default function PlayButton(props) {
  
   // set useSound
   const [play, { sound }] = useSound(currentFile.file, {
-    // const [play] = useSound(currentFile.file, {
-    // onplay: () => {
-    //   sound?.fade(0, 1, 500)
-    // },
     onend: () => {
       setPlaying(false)
       setIsChecked(false)
-      // console.log("Button Green:", isChecked)
     },
     
   })
@@ -43,14 +38,12 @@ export default function PlayButton(props) {
       sound?.fade(1, 0, 500)
       setPlaying(false)
       setIsChecked(false)
-      // console.log("Button Green:", isChecked)
 
     } else {
       setPlaying(true)
       setIsChecked(true)
       play()
       sound?.fade(0, 1, 500)
-      // console.log("Button Green:", isChecked)
     }
   }
   

@@ -1,17 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { Link } from 'react-router-dom'
 
 function Home(props) {
   const {
-    activeGame,
     setActiveGame,
     scoreCount,
     setScoreCount,
     wrongCount,
     setWrongCount,
-    show,
-    setShow,
   } = props;
   
   useEffect(() => {
@@ -25,12 +22,6 @@ function Home(props) {
     setWrongCount(0)
     setActiveGame(true)
   }
-  
-  // const resumeGame = () => {
-  //   setScoreCount(localStorage.getItem('scoreStorage') || 0)
-  //   setWrongCount(localStorage.getItem('wrongCountStorage') || 0)
-  // }
-
   
   return (
     <div className="home-container">
