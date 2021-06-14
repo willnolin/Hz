@@ -29,7 +29,7 @@ function App() {
       
       <div className="main-container">
   
-      <Switch>
+     <Switch>
         <Route exact path="/">
             <Home
               setActiveGame = {setActiveGame}
@@ -56,7 +56,7 @@ function App() {
             <DisplayScores scores={scores} setScores={setScores}/>
         </Route>
        
-      </Switch>
+        </Switch>
        
       </div>
       

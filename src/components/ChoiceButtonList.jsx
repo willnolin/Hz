@@ -22,12 +22,13 @@ export default function ChoiceButtonList(props) {
   const [buttons, setButtons] = useState([]);
   
   useEffect(() => {
-    //initialize button colors to white
+    //initialize button colors 
     let newRandArr = randArr.map((btn) => ({ ...btn, color: "rgba(0, 0, 0, 0.4)" }))
+    let newCorrectObj = {...correctObj, color: "rgba(0, 0, 0, 0.4)" }
     // create new button Object array (to display names on fresh buttons)
     setTimeout(() => {
     newRandArr && setButtons([
-      correctObj && correctObj,
+      newCorrectObj && newCorrectObj,
       newRandArr[2],
       newRandArr[3],
       newRandArr[4],
@@ -79,7 +80,6 @@ export default function ChoiceButtonList(props) {
             id = {`btn${index}`}
             key={index}
             style={{boxShadow:`0 0 4px 4px ${btn?.color}`}} 
-            // style={{backgroundColor: `${btn?.color}`}}
             name={`${!btn ? correctObj?.name : btn?.name}`}
             onClick={handleChoice}
             >{!btn ? correctObj?.name : btn?.name}</button>
