@@ -242,7 +242,9 @@ input[type="checkbox"]:checked::after {
 #btn3 {
   background-color: none;
 }
-
+.resume {
+  display: none;
+}
 .scores-list {
   display: flex;
   flex-direction: column;

@@ -3,6 +3,7 @@ import screw from '../images/screw.png';
 
 export default function Header(props) {
   const { activeGame, setActiveGame, setScoreCount, setWrongCount } = props;
+  
   const newGame = () => {
     localStorage.clear()
     setScoreCount(0)

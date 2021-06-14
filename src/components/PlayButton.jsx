@@ -50,8 +50,7 @@ export default function PlayButton(props) {
 
   return (
     <div className="play-button">
-      {/* {console.log('Button Green:', isChecked */}
-      {/* )} */}
+    
        <input type="checkbox" onChange={handleClick} checked={isChecked} ></input>
 
     </div>

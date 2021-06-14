@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Home(props) {
   const {
+    activeGame,
     setActiveGame,
     scoreCount,
     setScoreCount,
@@ -14,7 +15,8 @@ function Home(props) {
   useEffect(() => {
     localStorage.setItem('scoreStorage', scoreCount)
     localStorage.setItem('wrongCountStorage', wrongCount)
-  }, [scoreCount, wrongCount])
+    localStorage.setItem('activeGameStorage', activeGame)
+  }, [scoreCount, wrongCount, activeGame])
   
   const newGame = () => {
     localStorage.clear()
@@ -29,9 +31,9 @@ function Home(props) {
       <Link to="/quiz">
         <button className = "home-btns" onClick={newGame}>NEW GAME</button>
       </Link>
-      
       <Link to="/quiz">
-        <button className = "home-btns" >RESUME GAME</button>
+      {activeGame ? <button className = "home-btns">RESUME GAME</button> : <div></div>}
+        
       </Link>
 
 

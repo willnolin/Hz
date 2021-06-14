@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 
 function App() {
   const [scores, setScores] = useState([]);
-  const [activeGame, setActiveGame] = useState(false);
+  const [activeGame, setActiveGame] = useState(localStorage.getItem('activeGameStorage'));
   const [show, setShow] = useState("none");
   const [scoreCount, setScoreCount] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
@@ -30,16 +30,7 @@ function App() {
       <div className="main-container">
   
      <Switch>
-        <Route exact path="/">
-            <Home
-              setActiveGame = {setActiveGame}
-              scoreCount={scoreCount}
-              setScoreCount={setScoreCount}
-              wrongCount={wrongCount}
-              setWrongCount={setWrongCount}
-            />
-        </Route>
-        <Route path="/quiz">
+        <Route exact path="/quiz">
             <Quiz
               setActiveGame = {setActiveGame}
               scores={scores}
@@ -54,6 +45,16 @@ function App() {
         </Route>
         <Route path="/scores">
             <DisplayScores scores={scores} setScores={setScores}/>
+        </Route>
+        <Route exact path="/">
+            <Home
+              activeGame={activeGame}
+              setActiveGame = {setActiveGame}
+              scoreCount={scoreCount}
+              setScoreCount={setScoreCount}
+              wrongCount={wrongCount}
+              setWrongCount={setWrongCount}
+            />
         </Route>
        
         </Switch>
