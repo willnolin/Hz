@@ -82,16 +82,16 @@ https://api.airtable.com/v0/app67oeILCiV8Nzfc/Table%201
 
 ## Project Schedule
 
-| Day        | Deliverable                                                  | Status     |
-| ---------- | ------------------------------------------------------------ | ---------- |
-| June 4-6   | Prompt / Wireframes / Component Heirarchy/ Timeframes        | Complete   |
-| June 7     | Project Approval /Pseudo / Airtable / PlayButton/ Get/ Post/ | Complete   |
-| June 8     | Choice Buttons / Implement Quiz Functionality /Display       | Complete   |
-| June 9     | Cont. Display / CSS style                                    | Complete   |
-| June 10    | Advanced Style / MVP                                         | Complete   |
-| June 11    | Post-MVP                                                     | Incomplete |
-| June 12-13 | continue Post-MVP                                            | Incomplete |
-| June 14    | Presentation                                                 | Incomplete |
+| Day        | Deliverable                                                  | Status   |
+| ---------- | ------------------------------------------------------------ | -------- |
+| June 4-6   | Prompt / Wireframes / Component Heirarchy/ Timeframes        | Complete |
+| June 7     | Project Approval /Pseudo / Airtable / PlayButton/ Get/ Post/ | Complete |
+| June 8     | Choice Buttons / Implement Quiz Functionality /Display       | Complete |
+| June 9     | Cont. Display / CSS style                                    | Complete |
+| June 10    | Advanced Style / MVP                                         | Complete |
+| June 11    | Post-MVP                                                     | Complete |
+| June 12-13 | continue Post-MVP                                            | Complete |
+| June 14    | Presentation                                                 | Complete |
 
 ## Timeframes
 
@@ -116,7 +116,7 @@ https://api.airtable.com/v0/app67oeILCiV8Nzfc/Table%201
 | Implement Routing with all Components                          |    H     |      3hrs      |     3hrs      |             |
 | Inital styling                                                 |    H     |      3hrs      |     4hrs      |             |
 | Advanced styling (transitions)                                 |    M     |      3hrs      |     5hrs      |             |
-| Total                                                          |    H     |     46hrs      |               |             |
+| Total                                                          |    H     |     46hrs      |    45.5hrs    |             |
 
 ## SWOT Analysis
 
