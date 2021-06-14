@@ -25,17 +25,21 @@ export default function PlayButton(props) {
   }, [clicked])
  
   // set useSound
+  console.log(currentFile)
   const [play, { sound }] = useSound(currentFile.file, {
+    volume: currentFile.volume,
+    interrupt: true,
     onend: () => {
       setPlaying(false)
       setIsChecked(false)
     },
     
+    
   })
   
   const handleClick = () => {
     if (playing) {
-      sound?.fade(1, 0, 500)
+      sound?.fade(currentFile.volume, 0, 500)
       setPlaying(false)
       setIsChecked(false)
 
@@ -43,7 +47,8 @@ export default function PlayButton(props) {
       setPlaying(true)
       setIsChecked(true)
       play()
-      sound?.fade(0, 1, 500)
+      console.log(play)
+      sound?.fade(0, currentFile.volume, 500)
     }
   }
   

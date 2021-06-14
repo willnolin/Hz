@@ -34,7 +34,7 @@ export default function ChoiceButtonList(props) {
       newRandArr[4],
     ].sort(() => Math.random() - 0.5))
       setMessage("")
-    }, 3000)
+    }, 2000)
     // eslint-disable-next-line
   }, [correctObj, randArr])
 
