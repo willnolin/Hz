@@ -25,7 +25,7 @@ export default function PlayButton(props) {
      // eslint-disable-next-line
   }, [clicked])
  
-  // set useSound
+  // set useSound with interrupt
   console.log(currentFile)
   const [play, { sound }] = useSound(currentFile.file, {
    
