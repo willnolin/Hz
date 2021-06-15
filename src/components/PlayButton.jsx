@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import useSound from 'use-sound'
 export default function PlayButton(props) {
   const {
+    correctObj,
     setCorrectObj,
     randArr,
     clicked,
@@ -27,7 +28,7 @@ export default function PlayButton(props) {
   // set useSound
   console.log(currentFile)
   const [play, { sound }] = useSound(currentFile.file, {
-    volume: currentFile.volume,
+   
     interrupt: true,
     onend: () => {
       setPlaying(false)

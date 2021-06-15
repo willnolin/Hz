@@ -37,6 +37,7 @@ const Quiz = (props) => {
         message={message} />
  
       <PlayButton
+        correctObj = {correctObj}
         setCorrectObj={setCorrectObj}
         randArr={randArr}
         clicked={clicked} />
