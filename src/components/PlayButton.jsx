@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import useSound from 'use-sound'
 export default function PlayButton(props) {
   const {
-    correctObj,
     setCorrectObj,
     randArr,
     clicked,
