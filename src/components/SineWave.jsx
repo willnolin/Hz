@@ -2,11 +2,9 @@ import React, { useRef, useEffect } from 'react'
 import * as dat from 'dat.gui'
 
 const Sinewave = (props) => {
-  
+  const {freq, amp } = props;
   const gui = new dat.GUI()
   const canvasRef = useRef(null);
-  
-  
   
   useEffect(() => {
     
@@ -17,8 +15,8 @@ const Sinewave = (props) => {
     const wave = {
       y: canvas?.height / 2,
       length: 0.1,
-      amplitude: 55,
-      freq: .05
+      amplitude: amp,
+      waveFreq: freq
     }
     
     const strokeColor = {
@@ -27,25 +25,25 @@ const Sinewave = (props) => {
       l: 50
     }
     
-    const waveFolder = gui.addFolder('wave')
-    waveFolder.add(wave, 'y', 0, canvas.height)
-    waveFolder.add(wave, 'length', -0.01, 0.01)
-    waveFolder.add(wave, 'amplitude', -300, 300)
-    waveFolder.add(wave, 'freq', -0.01, 1)
-    waveFolder.open()
+    // const waveFolder = gui.addFolder('wave') 
+    // waveFolder.add(wave, 'y', 0, canvas.height)
+    // waveFolder.add(wave, 'length', -0.01, 0.1)
+    // waveFolder.add(wave, 'amplitude', -300, 300)
+    // waveFolder.add(wave, 'freq', -.5, .1)
+    // waveFolder.open()
 
-    const strokeFolder = gui.addFolder('stroke')
-    strokeFolder.add(strokeColor, 'h', 0, 255)
-    strokeFolder.add(strokeColor, 's', 0, 100)
-    strokeFolder.add(strokeColor, 'l', 0, 100)
-    strokeFolder.open()
+    // const strokeFolder = gui.addFolder('stroke')
+    // strokeFolder.add(strokeColor, 'h', 0, 255)
+    // strokeFolder.add(strokeColor, 's', 0, 100)
+    // strokeFolder.add(strokeColor, 'l', 0, 100)
+    // strokeFolder.open()
     
-    let increment = wave.freq
+    let increment = wave.waveFreq
     let animationFrameId;
     
     function animate() {
       animationFrameId = requestAnimationFrame(animate);
-      c.fillStyle = 'rgba(0,0,0,0.04)'
+      c.fillStyle = 'rgba(9, 8, 9, 1)'
       c.fillRect(0, 0, c.canvas.width, c.canvas.height)
       c.beginPath()
       
@@ -53,20 +51,21 @@ const Sinewave = (props) => {
       
       for (let i = 0; i < canvas.width; i++) {
         c.lineTo(i, wave.y + Math.sin(i * wave.length + increment)
-          * wave.amplitude * Math.sin(increment + i))
+          * wave.amplitude * Math.cos(increment) )
        
         
       }
       c.strokeStyle = 'green';
       c.stroke()
-      increment += wave.freq
+      increment += wave.waveFreq
+ 
   }
     animate()
     // return () => {
     //   cancelAnimationFrame(animationFrameId)
     // }
 
-  }, [])
+  }, [freq])
   
   
   // const wave = {
