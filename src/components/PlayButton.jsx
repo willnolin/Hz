@@ -5,6 +5,8 @@ export default function PlayButton(props) {
     setCorrectObj,
     randArr,
     clicked,
+    setFreq,
+    setAmp,
   } = props;
 
   const [playing, setPlaying] = useState(false);
@@ -39,19 +41,23 @@ export default function PlayButton(props) {
   
   const handleClick = () => {
     if (playing) {
-      sound?.fade(currentFile.volume, 0, 500)
+      sound?.fade(currentFile.volume, 0, 200)
       setPlaying(false)
       setIsChecked(false)
+      setFreq(0)
+      setAmp(1)
 
     } else {
       setPlaying(true)
       setIsChecked(true)
       play()
       console.log(play)
-      sound?.fade(0, currentFile.volume, 500)
+      sound?.fade(0, currentFile.volume, 200)
+      setFreq(currentFile.freq * .0001)
+      setAmp(20)
     }
   }
-  
+  //this is a new comment that I am adding in teh develp branch blah blah blah
 
   return (
     <div className="play-button">

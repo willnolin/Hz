@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-
+import Canvas from "./Canvas"
+import SineWave from "./SineWave"
 import { Link } from 'react-router-dom'
 
 function Home(props) {
@@ -35,8 +36,8 @@ function Home(props) {
       {activeGame ? <button className = "home-btns">RESUME GAME</button> : <div></div>}
         
       </Link>
-
-
+      {/* <Canvas></Canvas> */}
+      <SineWave></SineWave>
     </div>
   )
 }

@@ -47,11 +47,13 @@ a {
   font-family: "Squealer-fill";
   height: 75%;
   font-size: 18px;
+  transition: all 0.25s ease-in-out;
 }
 
 a.nav-link:hover {
   color: rgb(209, 193, 103);
   text-decoration: none;
+  transition: all 0.25s ease-in-out;
 }
 
 .app-title {
@@ -59,10 +61,12 @@ a.nav-link:hover {
   font-size: 35px;
   height: fit-content;
   margin-top: 5px;
+  transition: all 0.25s ease-in-out;
 }
 .app-title:hover {
   color: rgb(209, 193, 103);
   text-decoration: none;
+  transition: all 0.25s ease-in-out;
 }
 
 .screw {
@@ -127,6 +131,7 @@ a.nav-link:hover {
   font-size: 20px;
   color: rgb(29, 244, 75);
   text-shadow: 1px 1px 2px rgb(101, 186, 120);
+  transition: all 0.25s ease-in-out;
 }
 
 #xxx {
@@ -247,7 +252,7 @@ input[type="checkbox"]:checked::after {
 .scores-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   /* align-items: center; */
   margin-top: 125px;
   background: rgb(9, 8, 9);

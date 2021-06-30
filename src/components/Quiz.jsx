@@ -27,19 +27,28 @@ const Quiz = (props) => {
   const [correctObj, setCorrectObj] = useState(null);
   const [message, setMessage] = useState("");
   const [clicked, setClicked] = useState(false);
-  
+  const [freq, setFreq] = useState(0)
+  const [amp, setAmp] = useState(1)
+
+
   return (
     <div className="gameplay-container">
    
       <Display
         scoreCount={scoreCount}
         wrongCount={wrongCount}
-        message={message} />
+        message={message}
+        freq={freq}
+        amp={amp}
+      />
  
       <PlayButton
         setCorrectObj={setCorrectObj}
         randArr={randArr}
-        clicked={clicked} />
+        clicked={clicked}
+        setFreq={setFreq}
+        setAmp={setAmp}
+      />
   
       <ChoiceButtonList
         randArr={randArr}

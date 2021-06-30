@@ -42,7 +42,7 @@ function App() {
               show={show}
               setShow={setShow}
             />
-        </Route>
+        </Route>       
         <Route path="/scores">
             <DisplayScores scores={scores} setScores={setScores}/>
         </Route>
