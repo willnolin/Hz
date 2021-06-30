@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import Canvas from "./Canvas"
+// import Canvas from "./Canvas"
 import SineWave from "./SineWave"
 import { Link } from 'react-router-dom'
 

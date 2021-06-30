@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react'
-import * as dat from 'dat.gui'
+// import * as dat from 'dat.gui'
 
 const Sinewave = (props) => {
   const {freq, amp } = props;
-  const gui = new dat.GUI()
+  // const gui = new dat.GUI()
   const canvasRef = useRef(null);
   
   useEffect(() => {
@@ -19,11 +19,11 @@ const Sinewave = (props) => {
       waveFreq: freq
     }
     
-    const strokeColor = {
-      h: 100,
-      s: 50,
-      l: 50
-    }
+    // const strokeColor = {
+    //   h: 100,
+    //   s: 50,
+    //   l: 50
+    // }
     
     // const waveFolder = gui.addFolder('wave') 
     // waveFolder.add(wave, 'y', 0, canvas.height)
@@ -39,9 +39,11 @@ const Sinewave = (props) => {
     // strokeFolder.open()
     
     let increment = wave.waveFreq
+    // eslint-disable-next-line
     let animationFrameId;
     
     function animate() {
+      // eslint-disable-next-line
       animationFrameId = requestAnimationFrame(animate);
       c.fillStyle = 'rgba(9, 8, 9, 1)'
       c.fillRect(0, 0, c.canvas.width, c.canvas.height)
@@ -64,7 +66,7 @@ const Sinewave = (props) => {
     // return () => {
     //   cancelAnimationFrame(animationFrameId)
     // }
-
+// eslint-disable-next-line
   }, [freq])
   
   
