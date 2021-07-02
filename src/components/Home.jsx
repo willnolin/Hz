@@ -37,7 +37,7 @@ function Home(props) {
         
       </Link>
       {/* <Canvas></Canvas> */}
-      <SineWave></SineWave>
+      <SineWave freq={-.1} amp={20}></SineWave>
     </div>
   )
 }

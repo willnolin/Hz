@@ -53,7 +53,7 @@ export default function PlayButton(props) {
       play()
       console.log(play)
       sound?.fade(0, currentFile.volume, 200)
-      setFreq(currentFile.freq * .0001)
+      setFreq(currentFile.freq * -.0001)
       setAmp(20)
     }
   }
