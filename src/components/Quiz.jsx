@@ -27,6 +27,7 @@ const Quiz = (props) => {
   const [correctObj, setCorrectObj] = useState(null);
   const [message, setMessage] = useState("");
   const [clicked, setClicked] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const [freq, setFreq] = useState(0)
   const [amp, setAmp] = useState(1)
 
@@ -48,6 +49,8 @@ const Quiz = (props) => {
         clicked={clicked}
         setFreq={setFreq}
         setAmp={setAmp}
+        playing={playing}
+        setPlaying={setPlaying}
       />
   
       <ChoiceButtonList
@@ -61,6 +64,10 @@ const Quiz = (props) => {
         setScoreCount={setScoreCount}
         setWrongCount={setWrongCount}
         setShow={setShow}
+        setFreq={setFreq}
+        setAmp={setAmp}
+        playing={playing}
+        setPlaying={setPlaying}
       />
       <Form
         setActiveGame ={setActiveGame}

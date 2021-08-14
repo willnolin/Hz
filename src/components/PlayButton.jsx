@@ -7,9 +7,11 @@ export default function PlayButton(props) {
     clicked,
     setFreq,
     setAmp,
+    playing,
+    setPlaying,
   } = props;
 
-  const [playing, setPlaying] = useState(false);
+  // const [playing, setPlaying] = useState(false);
   const [currentFile, setCurrentFile] = useState(randArr[0])
   const [isChecked, setIsChecked] = useState(false)
  

@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react'
 
-// ===  this component will create the choice buttons 
-// ===  one of the buttons needs to match the name of the playbutton
-// ===  so, you need to pass the winning Object from mp3Array into
-// ==  this component so that you can put it in the button array
-// ===  but then, the array will need to be scrambled somehow....
 export default function ChoiceButtonList(props) {
   const {
     // tempArray,
@@ -18,6 +13,10 @@ export default function ChoiceButtonList(props) {
     setScoreCount,
     setWrongCount,
     setShow,
+    setFreq,
+    setAmp,
+    playing,
+    setPlaying
   } = props;
   const [buttons, setButtons] = useState([]);
   
@@ -43,6 +42,10 @@ export default function ChoiceButtonList(props) {
     const handleChoice = (e) => {
       let newButtons;
       setClicked((prevClick) => !prevClick)
+      if (playing) 
+        setPlaying(false)
+      setFreq(0)
+      setAmp(1)
       setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
       let choice = buttons.find(button => button.name === e.target.name)
       const index = buttons.indexOf(choice)
