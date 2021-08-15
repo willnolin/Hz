@@ -331,11 +331,11 @@ form {
   justify-content: space-around;
   align-items: center;
   background: radial-gradient(#e9e1e1, #9198e5);
-  margin: 50% auto;
+  margin: 100px auto;
   padding: 10px;
   border: 1px solid #888;
   border-radius: 5px;
-  width: 50%;
+  width: 200px;
   font-family: "Indie-rock";
 }
 
