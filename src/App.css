@@ -237,6 +237,11 @@ input[type="checkbox"]:checked::after {
   border-radius: 5px;
   font-family: "Indie-rock";
   font-size: 22px;
+  cursor: pointer;
+}
+
+.home-canvas {
+  border-radius: 5px;
 }
 
 #btn0 {
