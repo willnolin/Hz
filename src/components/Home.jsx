@@ -20,6 +20,7 @@ function Home(props) {
   }, [scoreCount, wrongCount, activeGame])
   
   const newGame = () => {
+
     localStorage.clear()
     setScoreCount(0)
     setWrongCount(0)

@@ -26,6 +26,7 @@ export default function ChoiceButtonList(props) {
     let newRandArr = randArr.map((btn) => ({ ...btn, color: "rgba(0, 0, 0, 0.4)" }))
     let newCorrectObj = { ...correctObj, color: "rgba(0, 0, 0, 0.4)" }
     // create new button Object array (to display names on fresh buttons)
+
     setTimeout(() => {
       setInProp(true);
     newRandArr && setButtons([
