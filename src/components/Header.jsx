@@ -17,7 +17,7 @@ export default function Header(props) {
      
       <div className = "nav-bar" >
         <Link className="nav-link" to="/quiz">
-          {activeGame ? <h3>RESUME GAME</h3> : <h3 onClick={newGame}>NEW GAME</h3>}
+          {activeGame ? <h3>RESUME GAME</h3> : <h3 onClick={newGame}>START GAME</h3>}
         </Link>
         <Link className= "nav-link" to="/scores">
           <h3 >HIGH SCORES</h3>
