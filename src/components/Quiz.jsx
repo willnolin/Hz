@@ -30,6 +30,7 @@ const Quiz = (props) => {
   const [playing, setPlaying] = useState(false);
   const [freq, setFreq] = useState(0)
   const [amp, setAmp] = useState(1)
+  
 
 
   return (

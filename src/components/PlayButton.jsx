@@ -29,12 +29,13 @@ export default function PlayButton(props) {
   }, [clicked])
  
   useEffect(() => {
- 
-    sound?.fade(currentFile.volume, 0, 200)
-    setPlaying(false)
-    setIsChecked(false)
+    if (playing) {
+      sound?.fade(currentFile.volume, 0, 200)
+    }
+      setPlaying(false)
+      setIsChecked(false)
   }, [clicked])
-  
+
   // set useSound with interrupt
 
   const [play, { sound }] = useSound(currentFile.file, {

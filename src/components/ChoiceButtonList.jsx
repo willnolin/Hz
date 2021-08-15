@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { CSSTransition } from 'react-transition-group'
 
 export default function ChoiceButtonList(props) {
   const {
@@ -16,16 +17,17 @@ export default function ChoiceButtonList(props) {
     setFreq,
     setAmp,
     playing,
-    setPlaying
+    setPlaying,
   } = props;
   const [buttons, setButtons] = useState([]);
-  
+  const [inProp, setInProp] = useState(false);
   useEffect(() => {
     //initialize button colors 
     let newRandArr = randArr.map((btn) => ({ ...btn, color: "rgba(0, 0, 0, 0.4)" }))
-    let newCorrectObj = {...correctObj, color: "rgba(0, 0, 0, 0.4)" }
+    let newCorrectObj = { ...correctObj, color: "rgba(0, 0, 0, 0.4)" }
     // create new button Object array (to display names on fresh buttons)
     setTimeout(() => {
+      setInProp(true);
     newRandArr && setButtons([
       newCorrectObj && newCorrectObj,
       newRandArr[2],
@@ -41,8 +43,8 @@ export default function ChoiceButtonList(props) {
     
     const handleChoice = (e) => {
       let newButtons;
+      setInProp(true)
       setClicked((prevClick) => !prevClick)
-      // setPlaying(false)
       setFreq(0)
       setAmp(1)
       setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
@@ -69,16 +71,17 @@ export default function ChoiceButtonList(props) {
           setShow("block")
         }
       }
-      
+      setInProp(false);
     }
   
-    return (
+  return (
+      <CSSTransition in={inProp} timeout={2000} classNames="fade" unmountOnExit>
       <div className="button-container">
        
         {buttons.map((btn, index) => {
         
           return <button
-            className={`choice-btn`}
+            className="choice-btn"
             id = {`btn${index}`}
             key={index}
             style={{boxShadow:`0 0 4px 4px ${btn?.color}`}} 
@@ -87,7 +90,7 @@ export default function ChoiceButtonList(props) {
             >{!btn ? correctObj?.name : btn?.name}</button>
         })}
       </div>
-    
+      </CSSTransition>
     )
   }
 
