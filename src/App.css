@@ -134,7 +134,7 @@ a.nav-link:hover {
   font-size: 20px;
   color: rgb(29, 244, 75);
   text-shadow: 1px 1px 2px rgb(101, 186, 120);
-  transition: all 0.25s ease-in-out;
+  transition: display 0.25s ease-in-out;
 }
 
 #xxx {
@@ -147,6 +147,9 @@ a.nav-link:hover {
   align-items: center;
   height: 50px;
   /* width: 325px; */
+}
+.message-container {
+  margin-top: 30px;
 }
 
 .play-button {
@@ -213,7 +216,9 @@ input[type="checkbox"]:checked::after {
   border-radius: 5px;
   font-family: "Indie-rock";
   font-size: 22px;
+  /* transition: all 0.5s ease-in-out; */
 }
+
 .welcome {
   font-family: "Squealer-fill";
   font-size: 50px;

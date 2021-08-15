@@ -28,8 +28,15 @@ export default function PlayButton(props) {
      // eslint-disable-next-line
   }, [clicked])
  
+  useEffect(() => {
+ 
+    sound?.fade(currentFile.volume, 0, 200)
+    setPlaying(false)
+    setIsChecked(false)
+  }, [clicked])
+  
   // set useSound with interrupt
-  console.log(currentFile)
+
   const [play, { sound }] = useSound(currentFile.file, {
    
     interrupt: true,

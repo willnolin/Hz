@@ -37,13 +37,12 @@ export default function ChoiceButtonList(props) {
     // eslint-disable-next-line
   }, [correctObj, randArr])
 
-    //=========handle the button choise ========//
+    //=========handle the button choice ========//
     
     const handleChoice = (e) => {
       let newButtons;
       setClicked((prevClick) => !prevClick)
-      if (playing) 
-        setPlaying(false)
+      // setPlaying(false)
       setFreq(0)
       setAmp(1)
       setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
