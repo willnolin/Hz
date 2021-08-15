@@ -20,15 +20,17 @@ const {scores, setScores} = props
 
   return (
     <>
-    <div className="scores-list"> 
-      
+      <div className="scores-list">
+        <h3 className="high-scores-title">High Scores</h3>
+        <div className="scores-list-content">
         {scores.sort((a, b) => b.fields.score - a.fields.score)
           .map((entry, index) => {
         return <div className = "score-entry" key={index}>
           <h4 className= "scores-field">{entry.fields.user}</h4>
           <h5 className= "scores-field">{`${entry.fields.score} pts`}</h5>
         <h5 className= "scores-field">{entry.createdTime.slice(0,10)}</h5> </div>
-      })}
+          })}
+          </div>
     </div>
     </>
   )

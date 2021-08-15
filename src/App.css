@@ -262,6 +262,7 @@ input[type="checkbox"]:checked::after {
   flex-direction: column;
   justify-content: flex-start;
   /* align-items: center; */
+  position: relative;
   margin-top: 125px;
   background: rgb(9, 8, 9);
   height: 420px;
@@ -274,6 +275,24 @@ input[type="checkbox"]:checked::after {
   /* width: 300px; */
 }
 
+.scores-list-content {
+  margin-top: 40px;
+  margin-left: 5px;
+}
+
+.high-scores-title {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around;
+  align-items: center; */
+  position: absolute;
+  top: 0;
+  left: 30%;
+  text-decoration: underline;
+  height: 30px;
+  color: rgb(29, 244, 75);
+  text-shadow: 1px 1px 2px rgb(101, 186, 120);
+}
 .score-entry {
   display: flex;
   flex-direction: row;
@@ -286,6 +305,7 @@ input[type="checkbox"]:checked::after {
 }
 .scores-field {
   width: 200px;
+  text-align: left;
 }
 .modal {
   display: none;
@@ -539,7 +559,8 @@ form {
   .scores-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
+    position: relative;
     /* align-items: center; */
     margin-top: 125px;
     background: rgb(9, 8, 9);
