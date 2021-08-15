@@ -7,9 +7,11 @@ export default function PlayButton(props) {
     clicked,
     setFreq,
     setAmp,
+    playing,
+    setPlaying,
   } = props;
 
-  const [playing, setPlaying] = useState(false);
+
   const [currentFile, setCurrentFile] = useState(randArr[0])
   const [isChecked, setIsChecked] = useState(false)
  
@@ -26,14 +28,25 @@ export default function PlayButton(props) {
      // eslint-disable-next-line
   }, [clicked])
  
+  useEffect(() => {
+    if (playing) {
+      sound?.fade(currentFile.volume, 0, 200)
+    }
+      setPlaying(false)
+      setIsChecked(false)
+  }, [clicked])
+
+
   // set useSound with interrupt
-  console.log(currentFile)
+
   const [play, { sound }] = useSound(currentFile.file, {
    
     interrupt: true,
     onend: () => {
-      setPlaying(false)
-      setIsChecked(false)
+      setPlaying(false);
+      setIsChecked(false);
+      setFreq(0);
+      setAmp(1);
     },
     
     
@@ -51,9 +64,8 @@ export default function PlayButton(props) {
       setPlaying(true)
       setIsChecked(true)
       play()
-      console.log(play)
       sound?.fade(0, currentFile.volume, 200)
-      setFreq(currentFile.freq * .0001)
+      setFreq(currentFile.freq * -.0001)
       setAmp(20)
     }
   }

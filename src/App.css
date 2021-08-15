@@ -109,8 +109,9 @@ a.nav-link:hover {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  position: relative;
   width: 256px;
-  height: 200px;
+  max-height: 200px;
   margin-top: 20px;
   border-radius: 10px;
   border-style: groove;
@@ -121,6 +122,8 @@ a.nav-link:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  position: absolute;
+  top: 0;
   width: 250px;
   height: 50px;
 }
@@ -131,7 +134,7 @@ a.nav-link:hover {
   font-size: 20px;
   color: rgb(29, 244, 75);
   text-shadow: 1px 1px 2px rgb(101, 186, 120);
-  transition: all 0.25s ease-in-out;
+  transition: display 0.25s ease-in-out;
 }
 
 #xxx {
@@ -144,6 +147,9 @@ a.nav-link:hover {
   align-items: center;
   height: 50px;
   /* width: 325px; */
+}
+.message-container {
+  margin-top: 30px;
 }
 
 .play-button {
@@ -210,7 +216,9 @@ input[type="checkbox"]:checked::after {
   border-radius: 5px;
   font-family: "Indie-rock";
   font-size: 22px;
+  /* transition: all 0.5s ease-in-out; */
 }
+
 .welcome {
   font-family: "Squealer-fill";
   font-size: 50px;
@@ -229,6 +237,11 @@ input[type="checkbox"]:checked::after {
   border-radius: 5px;
   font-family: "Indie-rock";
   font-size: 22px;
+  cursor: pointer;
+}
+
+.home-canvas {
+  border-radius: 5px;
 }
 
 #btn0 {
@@ -254,6 +267,7 @@ input[type="checkbox"]:checked::after {
   flex-direction: column;
   justify-content: flex-start;
   /* align-items: center; */
+  position: relative;
   margin-top: 125px;
   background: rgb(9, 8, 9);
   height: 420px;
@@ -266,6 +280,24 @@ input[type="checkbox"]:checked::after {
   /* width: 300px; */
 }
 
+.scores-list-content {
+  margin-top: 40px;
+  margin-left: 5px;
+}
+
+.high-scores-title {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around;
+  align-items: center; */
+  position: absolute;
+  top: 0;
+  left: 30%;
+  text-decoration: underline;
+  height: 30px;
+  color: rgb(29, 244, 75);
+  text-shadow: 1px 1px 2px rgb(101, 186, 120);
+}
 .score-entry {
   display: flex;
   flex-direction: row;
@@ -278,6 +310,7 @@ input[type="checkbox"]:checked::after {
 }
 .scores-field {
   width: 200px;
+  text-align: left;
 }
 .modal {
   display: none;
@@ -298,11 +331,11 @@ form {
   justify-content: space-around;
   align-items: center;
   background: radial-gradient(#e9e1e1, #9198e5);
-  margin: 50% auto;
+  margin: 100px auto;
   padding: 10px;
   border: 1px solid #888;
   border-radius: 5px;
-  width: 50%;
+  width: 200px;
   font-family: "Indie-rock";
 }
 
@@ -320,6 +353,24 @@ form {
   /* background-color: #a0937d; */
   background-image: url(./images/wood-pat.jpeg);
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4) inset;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
 }
 
 /* =========== Phone horizontal =============*/
@@ -513,7 +564,8 @@ form {
   .scores-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
+    position: relative;
     /* align-items: center; */
     margin-top: 125px;
     background: rgb(9, 8, 9);

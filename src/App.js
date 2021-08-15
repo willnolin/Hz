@@ -1,6 +1,6 @@
 import './App.css';
-import { useState } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Route, Switch, useHistory } from 'react-router-dom'
 import Home from './components/Home'
 import Quiz from './components/Quiz'
 import Header from './components/Header'
@@ -14,7 +14,12 @@ function App() {
   const [show, setShow] = useState("none");
   const [scoreCount, setScoreCount] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
-  
+  const history = useHistory()
+
+  useEffect(() => {
+    setActiveGame(false);
+    history.push("/")
+  }, [])
 
 //DOM rendering 
   return (

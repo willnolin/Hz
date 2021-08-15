@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react'
+import { CSSTransition } from 'react-transition-group'
 
-// ===  this component will create the choice buttons 
-// ===  one of the buttons needs to match the name of the playbutton
-// ===  so, you need to pass the winning Object from mp3Array into
-// ==  this component so that you can put it in the button array
-// ===  but then, the array will need to be scrambled somehow....
 export default function ChoiceButtonList(props) {
   const {
     // tempArray,
@@ -18,15 +14,21 @@ export default function ChoiceButtonList(props) {
     setScoreCount,
     setWrongCount,
     setShow,
+    setFreq,
+    setAmp,
+    playing,
+    setPlaying,
   } = props;
   const [buttons, setButtons] = useState([]);
-  
+  const [inProp, setInProp] = useState(false);
   useEffect(() => {
     //initialize button colors 
     let newRandArr = randArr.map((btn) => ({ ...btn, color: "rgba(0, 0, 0, 0.4)" }))
-    let newCorrectObj = {...correctObj, color: "rgba(0, 0, 0, 0.4)" }
+    let newCorrectObj = { ...correctObj, color: "rgba(0, 0, 0, 0.4)" }
     // create new button Object array (to display names on fresh buttons)
+
     setTimeout(() => {
+      setInProp(true);
     newRandArr && setButtons([
       newCorrectObj && newCorrectObj,
       newRandArr[2],
@@ -38,11 +40,14 @@ export default function ChoiceButtonList(props) {
     // eslint-disable-next-line
   }, [correctObj, randArr])
 
-    //=========handle the button choise ========//
+    //=========handle the button choice ========//
     
     const handleChoice = (e) => {
       let newButtons;
+      setInProp(true)
       setClicked((prevClick) => !prevClick)
+      setFreq(0)
+      setAmp(1)
       setRandArr([...mp3Array].sort(() => Math.random() - 0.5))
       let choice = buttons.find(button => button.name === e.target.name)
       const index = buttons.indexOf(choice)
@@ -67,16 +72,17 @@ export default function ChoiceButtonList(props) {
           setShow("block")
         }
       }
-      
+      setInProp(false);
     }
   
-    return (
+  return (
+      <CSSTransition in={inProp} timeout={2000} classNames="fade" unmountOnExit>
       <div className="button-container">
        
         {buttons.map((btn, index) => {
         
           return <button
-            className={`choice-btn`}
+            className="choice-btn"
             id = {`btn${index}`}
             key={index}
             style={{boxShadow:`0 0 4px 4px ${btn?.color}`}} 
@@ -85,7 +91,7 @@ export default function ChoiceButtonList(props) {
             >{!btn ? correctObj?.name : btn?.name}</button>
         })}
       </div>
-    
+      </CSSTransition>
     )
   }
 

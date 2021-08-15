@@ -20,6 +20,7 @@ function Home(props) {
   }, [scoreCount, wrongCount, activeGame])
   
   const newGame = () => {
+
     localStorage.clear()
     setScoreCount(0)
     setWrongCount(0)
@@ -37,7 +38,7 @@ function Home(props) {
         
       </Link>
       {/* <Canvas></Canvas> */}
-      <SineWave></SineWave>
+      <SineWave freq={-.1} amp={20} className={`home-canvas`}></SineWave>
     </div>
   )
 }
