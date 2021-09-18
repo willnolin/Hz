@@ -9,6 +9,7 @@ export default function PlayButton(props) {
     setAmp,
     playing,
     setPlaying,
+    volume
   } = props;
 
 
@@ -48,6 +49,7 @@ export default function PlayButton(props) {
       setFreq(0);
       setAmp(1);
     },
+    volume
     
     
   })

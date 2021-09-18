@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 
-
 import { getAllHighScores } from '../services/api.js'
 
 export default function DisplayScores(props) {
